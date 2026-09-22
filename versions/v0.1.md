@@ -401,25 +401,9 @@ KYC is intended to occur after passing the evaluation and before funded payouts.
 
 ---
 
-# Part VI — Inactivity
+# Part VI — Risk Review and Enforcement
 
-## 27. Inactivity Policy
-
-**After 14 days**
-
-After 14 consecutive days without trading activity, Bungee may flag the account as inactive and notify the trader.
-
-**After 30 days**
-
-After 30 consecutive days without trading activity, Bungee may close or disable the account.
-
-Bungee may provide advance notice before closure.
-
----
-
-# Part VII — Risk Review and Enforcement
-
-## 28. Manual Payout and Risk Review
+## 27. Manual Payout and Risk Review
 
 Bungee may manually review payouts and trading activity, particularly where profits are generated from:
 
@@ -433,7 +417,7 @@ Bungee may manually review payouts and trading activity, particularly where prof
 
 A market being tradeable does not guarantee that every trading pattern or payout will be accepted without review.
 
-## 29. Discretionary Abuse Review
+## 28. Discretionary Abuse Review
 
 Bungee reserves the right to investigate behavior that appears designed to exploit the evaluation, risk, execution, or payout system, even where the exact conduct is not expressly listed in this rulebook.
 
@@ -450,7 +434,7 @@ Examples include:
 
 Bungee may evaluate the overall economic substance and trading pattern, not only an isolated trade.
 
-## 30. Enforcement Actions
+## 29. Enforcement Actions
 
 Depending on the nature and severity of a violation, Bungee may:
 
@@ -472,9 +456,9 @@ Suspected abuse may be manually reviewed before a final decision.
 
 ---
 
-# Part VIII — Technical and Operational Rules
+# Part VII — Technical and Operational Rules
 
-## 31. Platform and Dashboard as Source of Truth
+## 30. Platform and Dashboard as Source of Truth
 
 Bungee’s internal records and dashboard govern:
 
@@ -494,7 +478,7 @@ Bungee’s internal records and dashboard govern:
 
 External screenshots, spreadsheets, third-party charting systems, or trader-side calculations do not override Bungee’s records.
 
-## 32. Technical Outages
+## 31. Technical Outages
 
 Bungee is not responsible for losses or missed trading opportunities caused solely by:
 
@@ -508,7 +492,7 @@ Bungee is not responsible for losses or missed trading opportunities caused sole
 
 Where an outage originates from Bungee infrastructure, Bungee may review affected accounts and determine an appropriate remedy at its discretion.
 
-## 33. Disputes and Logs
+## 32. Disputes and Logs
 
 Bungee’s internal execution, account, pricing, and risk logs will be used when reviewing account disputes.
 
@@ -516,7 +500,7 @@ A trader may raise a dispute through Bungee’s designated support process.
 
 Bungee may correct clear technical or accounting errors where supported by its internal records.
 
-## 34. Rule Changes
+## 33. Rule Changes
 
 Bungee may update:
 
@@ -535,7 +519,7 @@ Changes to market-risk settings may take effect immediately where required to pr
 
 ---
 
-# Part IX — Items Still to Finalize
+# Part VIII — Items Still to Finalize
 
 The following remain open before final launch:
 
@@ -583,8 +567,6 @@ The following remain open before final launch:
 | Payout asset | USDC ERC-20 initially |
 | Payout target | 1 business day |
 | KYC | After pass / before funded payout |
-| Inactivity flag | 14 days |
-| Inactivity closure | 30 days |
 | Manual payout review | Yes |
 | Emergency reduce-only / delisting | Yes |
 | Dashboard / internal ledger | Source of truth |
