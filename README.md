@@ -228,9 +228,9 @@ The live Bungee dashboard is the source of truth for the fee applied to a trade.
 
 The funding rate is:
 
-> **0.033% per day, charged in six equal intervals every four hours**
+> **0.033% per day, charged in 24 equal intervals every hour**
 
-Each four-hour funding charge is 0.0055% of the applicable open position notional.
+Each hourly funding charge is 0.001375% of the applicable open position notional.
 
 Funding is included in account equity and therefore affects:
 
@@ -578,7 +578,7 @@ The following remain open before final launch:
 | Latency / stale-price exploitation | Prohibited |
 | Execution model | Simulate, hedge, net, or externally execute at Bungee’s discretion |
 | Trading fees | Maker and taker matched at 1.5 bps (0.015%) per execution |
-| Funding | 0.033% per day, charged every 4 hours in six equal 0.0055% intervals |
+| Funding | 0.033% per day, charged hourly in 24 equal 0.001375% intervals |
 | Standard payout split | 80/20 |
 | Optional payout split | 90/10 |
 | Minimum payout | $50 |
