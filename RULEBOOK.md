@@ -351,10 +351,9 @@ The following are prohibited:
 
 ## 22. Profit Split
 
-Bungee’s initial payout structure is:
+Bungee’s payout structure is:
 
 - Standard: 80% trader / 20% Bungee
-- Optional upgrade: 90% trader / 10% Bungee
 
 ## 23. Minimum Payout
 
@@ -580,7 +579,6 @@ The following remain open before final launch:
 | Trading fees | Maker and taker matched at 1.5 bps (0.015%) per execution |
 | Funding | 0.033% per day, charged hourly in 24 equal 0.001375% intervals |
 | Standard payout split | 80/20 |
-| Optional payout split | 90/10 |
 | Minimum payout | $50 |
 | Payout asset | USDC ERC-20 initially |
 | Payout target | 1 business day |
