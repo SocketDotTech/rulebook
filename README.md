@@ -1,4 +1,4 @@
-# Socket Prop Trading Rulebook
+# Bungee Funded Perp Rulebook
 
 > **Version:** v0.1 — Working Draft  
 > **Status:** Product rulebook draft; subject to legal, compliance, risk, and operational review  
@@ -8,9 +8,9 @@
 
 ## 1. Purpose
 
-Socket Prop is designed to offer a simple, transparent evaluation and funded-trader program with clear risk limits, predictable payout rules, and market-specific controls.
+Bungee Funded Perp is designed to offer a simple, transparent evaluation and funded-trader program with clear risk limits, predictable payout rules, and market-specific controls.
 
-The Socket dashboard and internal account ledger are the authoritative source of truth for account status, balances, equity, breaches, payouts, supported markets, leverage, fees, and position limits.
+The Bungee dashboard and internal account ledger are the authoritative source of truth for account status, balances, equity, breaches, payouts, supported markets, leverage, fees, and position limits.
 
 ---
 
@@ -18,7 +18,7 @@ The Socket dashboard and internal account ledger are the authoritative source of
 
 ## 2. Evaluation Structure
 
-Socket Prop uses a one-step evaluation.
+Bungee Funded Perp uses a one-step evaluation.
 
 - No time limit
 - No minimum trading days
@@ -28,11 +28,11 @@ Socket Prop uses a one-step evaluation.
 - Daily loss limit varies by evaluation type
 - Maximum total drawdown varies by evaluation type
 
-Exact evaluation parameters will be displayed on the relevant evaluation plan before purchase and inside the Socket dashboard.
+Exact evaluation parameters will be displayed on the relevant evaluation plan before purchase and inside the Bungee dashboard.
 
 ## 3. Evaluation Plans
 
-Socket intends to offer the following evaluation sizes and tracks.
+Bungee intends to offer the following evaluation sizes and tracks.
 
 | Account Size | Classic | Pro | Turbo |
 | -----------: | ------: | --: | ----: |
@@ -41,18 +41,18 @@ Socket intends to offer the following evaluation sizes and tracks.
 | $50,000 | $430 | $300 | $195 |
 | $100,000 | $865 | $590 | $360 |
 
-> Pricing and plan availability may change. The live checkout page and Socket dashboard are the source of truth.
+> Pricing and plan availability may change. The live checkout page and Bungee dashboard are the source of truth.
 
 ## 4. Hard Breach Policy
 
-Socket uses a hard-breach model.
+Bungee uses a hard-breach model.
 
 An account may be breached if the trader:
 
 - Reaches or exceeds the maximum daily loss limit.
 - Reaches or exceeds the maximum total drawdown limit.
 - Uses a prohibited trading practice.
-- Violates these rules or the applicable Socket Prop Terms.
+- Violates these rules or the applicable Bungee Funded Perp Terms.
 
 After a hard breach:
 
@@ -77,7 +77,7 @@ The exact daily loss percentage and reset time will be defined per evaluation pr
 
 ## 6. Maximum Drawdown
 
-Socket uses a static maximum drawdown unless otherwise stated for a specific plan.
+Bungee uses a static maximum drawdown unless otherwise stated for a specific plan.
 
 The drawdown limit is measured against the account’s defined starting balance and does not trail upward with profits.
 
@@ -89,11 +89,11 @@ Exact drawdown values will be defined per evaluation plan.
 
 ## 7. Asset Listing Policy
 
-Socket does not automatically support every market listed on Hyperliquid or any other venue.
+Bungee does not automatically support every market listed on Hyperliquid or any other venue.
 
-A market must be explicitly approved and enabled by Socket before it can be traded.
+A market must be explicitly approved and enabled by Bungee before it can be traded.
 
-Socket may evaluate markets based on:
+Bungee may evaluate markets based on:
 
 - Market liquidity
 - Order-book depth
@@ -104,9 +104,9 @@ Socket may evaluate markets based on:
 - Counterparty and operational risk
 - Maximum executable size
 
-Venue listing alone does not make an asset eligible for Socket Prop.
+Venue listing alone does not make an asset eligible for Bungee Funded Perp.
 
-Socket may add more markets over time as they pass internal risk review.
+Bungee may add more markets over time as they pass internal risk review.
 
 ## 8. Initial Supported Markets
 
@@ -126,22 +126,22 @@ The initial intended market list is:
 | AVAX | TBD | TBD |
 
 > More assets may be added over time after liquidity and risk review.  
-> The live Socket dashboard is the source of truth for currently supported markets.
+> The live Bungee dashboard is the source of truth for currently supported markets.
 
 ## 9. Fixed Leverage
 
-Each supported asset has a fixed leverage amount set by Socket.
+Each supported asset has a fixed leverage amount set by Bungee.
 
 Leverage is not user-adjustable.
 
 Example:
 
-- If BTC is set to 10x leverage, BTC trades on Socket use 10x.
+- If BTC is set to 10x leverage, BTC trades on Bungee use 10x.
 - A trader cannot manually select 5x, 2x, or another leverage amount for BTC.
 
-Socket may change an asset’s fixed leverage prospectively based on market conditions, liquidity, volatility, venue limits, or risk considerations.
+Bungee may change an asset’s fixed leverage prospectively based on market conditions, liquidity, volatility, venue limits, or risk considerations.
 
-The current fixed leverage for each asset will be displayed in the Socket dashboard.
+The current fixed leverage for each asset will be displayed in the Bungee dashboard.
 
 ## 10. Maximum Position Size
 
@@ -154,19 +154,19 @@ Position limits may vary by asset based on:
 - Order-book depth
 - Market impact
 - Venue constraints
-- Socket’s internal risk limits
+- Bungee’s internal risk limits
 
 More liquid markets may have larger position limits. Thin or volatile markets may have smaller limits.
 
-Socket may reduce position limits, place a market into reduce-only mode, or disable a market entirely where necessary.
+Bungee may reduce position limits, place a market into reduce-only mode, or disable a market entirely where necessary.
 
 ## 11. Aggregate Account Allocation
 
-A trader may hold multiple active Socket Prop accounts, subject to a current maximum combined allocation of:
+A trader may hold multiple active Bungee Funded Perp accounts, subject to a current maximum combined allocation of:
 
 > **$200,000 total active account size**
 
-This refers to the combined nominal size of the trader’s active Socket Prop accounts.
+This refers to the combined nominal size of the trader’s active Bungee Funded Perp accounts.
 
 It is not:
 
@@ -179,7 +179,7 @@ Example:
 - Two $100,000 accounts = $200,000 combined allocation
 - Four $50,000 accounts = $200,000 combined allocation
 
-> **Placeholder:** The $200,000 cap may change once Socket finalizes its maximum account sizes and product lineup.
+> **Placeholder:** The $200,000 cap may change once Bungee finalizes its maximum account sizes and product lineup.
 
 Each account remains subject to its own risk limits and position restrictions.
 
@@ -189,11 +189,11 @@ Each account remains subject to its own risk limits and position restrictions.
 
 ## 12. Execution Model
 
-A Socket Prop account represents a trade-idea / trading-mandate relationship.
+A Bungee Funded Perp account represents a trade-idea / trading-mandate relationship.
 
-The trader submits trades through the Socket interface.
+The trader submits trades through the Bungee interface.
 
-Socket may, at its discretion:
+Bungee may, at its discretion:
 
 - Simulate trades internally
 - Hedge some or all exposure
@@ -201,9 +201,9 @@ Socket may, at its discretion:
 - Externally execute trades
 - Route orders to one or more venues or liquidity providers
 
-The trader does not directly own or control Socket’s underlying capital or external hedge positions.
+The trader does not directly own or control Bungee’s underlying capital or external hedge positions.
 
-The trader’s contractual account economics are determined by the Socket account ledger and applicable program rules.
+The trader’s contractual account economics are determined by the Bungee account ledger and applicable program rules.
 
 ## 13. Trading Fees
 
@@ -222,7 +222,7 @@ Trading fees are included in:
 - Drawdown calculations
 - Payout calculations
 
-The live Socket dashboard is the source of truth for the fee applied to a trade.
+The live Bungee dashboard is the source of truth for the fee applied to a trade.
 
 ## 14. Funding
 
@@ -239,11 +239,11 @@ Funding is included in account equity and therefore affects:
 - Maximum drawdown
 - Payout eligibility
 
-The live Socket dashboard is the source of truth for funding timestamps and charges applied to an account.
+The live Bungee dashboard is the source of truth for funding timestamps and charges applied to an account.
 
 ## 15. Slippage and Market Execution
 
-Socket may model realistic market execution, including:
+Bungee may model realistic market execution, including:
 
 - Spread
 - Slippage
@@ -256,7 +256,7 @@ Socket may model realistic market execution, including:
 
 A displayed price does not guarantee that the full order will be filled at that price.
 
-Socket may reject, resize, or limit orders that exceed:
+Bungee may reject, resize, or limit orders that exceed:
 
 - Available liquidity
 - Asset position limits
@@ -266,9 +266,9 @@ Socket may reject, resize, or limit orders that exceed:
 
 ## 16. Extreme Volatility and Market Controls
 
-Socket may take protective action during abnormal market conditions.
+Bungee may take protective action during abnormal market conditions.
 
-Socket may:
+Bungee may:
 
 - Reduce maximum position size
 - Change fixed leverage prospectively
@@ -293,11 +293,11 @@ Traders may:
 - Use publicly available research
 - Independently act on content they discover
 
-Socket does not prohibit ordinary inspiration from public trading content.
+Bungee does not prohibit ordinary inspiration from public trading content.
 
 ## 18. Copy Trading and Coordinated Execution
 
-The following are prohibited unless expressly approved by Socket:
+The following are prohibited unless expressly approved by Bungee:
 
 - Automatically mirroring another trader’s account
 - Centrally controlling trades across multiple supposedly independent accounts
@@ -312,12 +312,12 @@ Cross-account hedging is prohibited.
 
 Examples include:
 
-- Long BTC in one Socket account while short BTC in another
+- Long BTC in one Bungee account while short BTC in another
 - Using correlated assets to manufacture substantially offsetting exposure
 - Coordinating opposite positions with another trader
 - Intentionally creating one losing account and one winning account to manufacture payout asymmetry
 
-Socket may assess the economic substance of the trading pattern rather than only the exact symbol traded.
+Bungee may assess the economic substance of the trading pattern rather than only the exact symbol traded.
 
 ## 20. Technical and Market Abuse
 
@@ -327,7 +327,7 @@ Prohibited activity includes:
 - Stale-price exploitation
 - Exploiting feed errors
 - Exploiting platform bugs
-- Manipulating Socket’s execution or risk systems
+- Manipulating Bungee’s execution or risk systems
 - Using strategies that depend on simulated-market defects
 - Front-running using non-public information
 - Trading on material non-public information
@@ -343,7 +343,7 @@ The following are prohibited:
 - Transferring or selling an account
 - Allowing another person to trade the account
 - Operating accounts on behalf of another trader
-- Using multiple identities to evade Socket limits
+- Using multiple identities to evade Bungee limits
 
 ---
 
@@ -351,16 +351,16 @@ The following are prohibited:
 
 ## 22. Profit Split
 
-Socket’s initial payout structure is:
+Bungee’s initial payout structure is:
 
-- Standard: 80% trader / 20% Socket
-- Optional upgrade: 90% trader / 10% Socket
+- Standard: 80% trader / 20% Bungee
+- Optional upgrade: 90% trader / 10% Bungee
 
 ## 23. Minimum Payout
 
 The minimum payout is:
 
-> **$50 after Socket’s profit split**
+> **$50 after Bungee’s profit split**
 
 ## 24. Payout Method
 
@@ -369,11 +369,11 @@ Initial payout method:
 - USDC
 - Ethereum / ERC-20
 
-Socket may add additional payout networks or methods over time.
+Bungee may add additional payout networks or methods over time.
 
 ## 25. Payout Timing
 
-Socket targets processing valid payout requests within:
+Bungee targets processing valid payout requests within:
 
 > **1 business day**
 
@@ -396,7 +396,7 @@ A trader must:
 - Complete required KYC and compliance checks
 - Have no unresolved hard breach
 - Have no unresolved abuse or risk investigation
-- Meet any operational requirements shown in the Socket dashboard
+- Meet any operational requirements shown in the Bungee dashboard
 
 KYC is intended to occur after passing the evaluation and before funded payouts.
 
@@ -408,13 +408,13 @@ KYC is intended to occur after passing the evaluation and before funded payouts.
 
 **After 14 days**
 
-After 14 consecutive days without trading activity, Socket may flag the account as inactive and notify the trader.
+After 14 consecutive days without trading activity, Bungee may flag the account as inactive and notify the trader.
 
 **After 30 days**
 
-After 30 consecutive days without trading activity, Socket may close or disable the account.
+After 30 consecutive days without trading activity, Bungee may close or disable the account.
 
-Socket may provide advance notice before closure.
+Bungee may provide advance notice before closure.
 
 ---
 
@@ -422,7 +422,7 @@ Socket may provide advance notice before closure.
 
 ## 28. Manual Payout and Risk Review
 
-Socket may manually review payouts and trading activity, particularly where profits are generated from:
+Bungee may manually review payouts and trading activity, particularly where profits are generated from:
 
 - Thin or illiquid markets
 - Unusually large positions
@@ -436,7 +436,7 @@ A market being tradeable does not guarantee that every trading pattern or payout
 
 ## 29. Discretionary Abuse Review
 
-Socket reserves the right to investigate behavior that appears designed to exploit the evaluation, risk, execution, or payout system, even where the exact conduct is not expressly listed in this rulebook.
+Bungee reserves the right to investigate behavior that appears designed to exploit the evaluation, risk, execution, or payout system, even where the exact conduct is not expressly listed in this rulebook.
 
 Examples include:
 
@@ -449,11 +449,11 @@ Examples include:
 - Deliberately exploiting a loophole in the rules
 - Splitting exposure across identities to evade limits
 
-Socket may evaluate the overall economic substance and trading pattern, not only an isolated trade.
+Bungee may evaluate the overall economic substance and trading pattern, not only an isolated trade.
 
 ## 30. Enforcement Actions
 
-Depending on the nature and severity of a violation, Socket may:
+Depending on the nature and severity of a violation, Bungee may:
 
 - Reject an order
 - Resize an order
@@ -465,7 +465,7 @@ Depending on the nature and severity of a violation, Socket may:
 - Reverse an improperly credited payout
 - Permanently breach an account
 - Close related accounts
-- Disqualify a trader from Socket Prop
+- Disqualify a trader from Bungee Funded Perp
 
 Ordinary risk-limit breaches are enforced according to the hard-breach policy.
 
@@ -477,7 +477,7 @@ Suspected abuse may be manually reviewed before a final decision.
 
 ## 31. Platform and Dashboard as Source of Truth
 
-Socket’s internal records and dashboard govern:
+Bungee’s internal records and dashboard govern:
 
 - Balance
 - Equity
@@ -493,11 +493,11 @@ Socket’s internal records and dashboard govern:
 - Payout eligibility
 - Account status
 
-External screenshots, spreadsheets, third-party charting systems, or trader-side calculations do not override Socket’s records.
+External screenshots, spreadsheets, third-party charting systems, or trader-side calculations do not override Bungee’s records.
 
 ## 32. Technical Outages
 
-Socket is not responsible for losses or missed trading opportunities caused solely by:
+Bungee is not responsible for losses or missed trading opportunities caused solely by:
 
 - Internet connectivity issues on the trader’s side
 - Device failures
@@ -507,19 +507,19 @@ Socket is not responsible for losses or missed trading opportunities caused sole
 - Market-data interruptions
 - Force majeure events
 
-Where an outage originates from Socket infrastructure, Socket may review affected accounts and determine an appropriate remedy at its discretion.
+Where an outage originates from Bungee infrastructure, Bungee may review affected accounts and determine an appropriate remedy at its discretion.
 
 ## 33. Disputes and Logs
 
-Socket’s internal execution, account, pricing, and risk logs will be used when reviewing account disputes.
+Bungee’s internal execution, account, pricing, and risk logs will be used when reviewing account disputes.
 
-A trader may raise a dispute through Socket’s designated support process.
+A trader may raise a dispute through Bungee’s designated support process.
 
-Socket may correct clear technical or accounting errors where supported by its internal records.
+Bungee may correct clear technical or accounting errors where supported by its internal records.
 
 ## 34. Rule Changes
 
-Socket may update:
+Bungee may update:
 
 - Supported markets
 - Fixed leverage
@@ -530,9 +530,9 @@ Socket may update:
 - Operational requirements
 - Risk controls
 
-Material changes should be communicated through the Socket platform or applicable terms.
+Material changes should be communicated through the Bungee platform or applicable terms.
 
-Changes to market-risk settings may take effect immediately where required to protect traders, Socket, venues, or liquidity providers.
+Changes to market-risk settings may take effect immediately where required to protect traders, Bungee, venues, or liquidity providers.
 
 ---
 
@@ -556,7 +556,7 @@ The following remain open before final launch:
 
 # Current Product Decisions at a Glance
 
-| Rule | Socket v0.1 |
+| Rule | Bungee v0.1 |
 | ---- | ----------- |
 | Evaluation | One-step |
 | Time limit | None |
@@ -565,7 +565,7 @@ The following remain open before final launch:
 | Breach model | Hard breach |
 | Drawdown | Static |
 | Daily loss | Equity-based, including unrealized P&L |
-| Supported markets | Socket allowlist only |
+| Supported markets | Bungee allowlist only |
 | Initial market count | 10 |
 | More markets later | Yes, after risk review |
 | Leverage | Fixed per asset; not user-adjustable |
@@ -576,7 +576,7 @@ The following remain open before final launch:
 | Automated/coordinated copy trading | Prohibited |
 | Account sharing | Prohibited |
 | Latency / stale-price exploitation | Prohibited |
-| Execution model | Simulate, hedge, net, or externally execute at Socket’s discretion |
+| Execution model | Simulate, hedge, net, or externally execute at Bungee’s discretion |
 | Trading fees | Maker and taker matched at 1.5 bps (0.015%) per execution |
 | Funding | 0.033% per day, charged every 4 hours in six equal 0.0055% intervals |
 | Standard payout split | 80/20 |
@@ -593,4 +593,4 @@ The following remain open before final launch:
 
 ---
 
-> **Important:** This document is a product rulebook draft, not final legal terms. Before launch, it should be reconciled with Socket’s actual execution infrastructure, risk engine, KYC/AML process, supported jurisdictions, venue relationships, and legal documentation.
+> **Important:** This document is a product rulebook draft, not final legal terms. Before launch, it should be reconciled with Bungee’s actual execution infrastructure, risk engine, KYC/AML process, supported jurisdictions, venue relationships, and legal documentation.
