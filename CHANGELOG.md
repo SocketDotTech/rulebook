@@ -7,6 +7,7 @@ This file records material changes to the Bungee Funded Perp rulebook.
 Status: Working Draft
 
 - Established the one-step evaluation and hard-breach model.
+- Defined all supported trading products as isolated-margin perpetual contracts with no cross margin.
 - Added Classic, Pro, and Turbo pricing for $10K, $25K, $50K, and $100K accounts.
 - Set maker and taker trading fees to 1.5 basis points per execution.
 - Set funding to a dynamic hourly rate with a 0% minimum.

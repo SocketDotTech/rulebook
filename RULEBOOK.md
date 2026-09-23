@@ -10,6 +10,8 @@
 
 Bungee Funded Perp is designed to offer a simple, transparent evaluation and funded-trader program with clear risk limits, predictable payout rules, and market-specific controls.
 
+Bungee offers isolated-margin perpetual contracts. Cross-margin trading is not supported.
+
 The Bungee dashboard and internal account ledger are the authoritative source of truth for account status, balances, equity, breaches, payouts, supported markets, leverage, fees, and position limits.
 
 ---
@@ -134,7 +136,13 @@ The initial intended market list is:
 > More assets may be added over time after liquidity and risk review.  
 > The live Bungee dashboard is the source of truth for currently supported markets.
 
-## 9. Fixed Leverage
+## 9. Isolated Perpetuals and Fixed Leverage
+
+All supported markets are perpetual contracts that use isolated margin.
+
+Margin is assigned to each position independently and is not shared automatically with other open positions. A position's margin and liquidation risk are therefore isolated from the margin assigned to other positions.
+
+Isolated margin does not remove account-level risk controls. Realized and unrealized P&L, trading fees, and funding from every position continue to affect account equity, daily loss, maximum drawdown, and breach status. An account-level breach may result in all open positions being closed.
 
 Each supported asset has a fixed leverage amount set by Bungee.
 
@@ -567,6 +575,7 @@ The following remain open before final launch:
 | Daily loss | Equity-based, including unrealized P&L |
 | Daily reset | 12:00 UTC |
 | Supported markets | Bungee allowlist only |
+| Trading product | Isolated-margin perpetuals; no cross margin |
 | Initial market count | 10 |
 | More markets later | Yes, after risk review |
 | Leverage | Fixed per asset; not user-adjustable |
