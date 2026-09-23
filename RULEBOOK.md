@@ -2,7 +2,7 @@
 
 > **Version:** v0.1 — Working Draft  
 > **Status:** Product rulebook draft; subject to legal, compliance, risk, and operational review  
-> **Last updated:** September 2, 2026
+> **Last updated:** September 23, 2026
 
 ---
 
@@ -73,7 +73,13 @@ Daily loss is measured using account equity and may include:
 - Funding charges
 - Other applicable account charges
 
-The exact daily loss percentage and reset time will be defined per evaluation product and displayed in the dashboard.
+The exact daily loss percentage will be defined per evaluation product and displayed in the dashboard.
+
+The daily loss measurement resets each day at:
+
+> **12:00 UTC**
+
+The dashboard will display the active daily loss limit and the time remaining until the next reset.
 
 ## 6. Maximum Drawdown
 
@@ -226,11 +232,13 @@ The live Bungee dashboard is the source of truth for the fee applied to a trade.
 
 ## 14. Funding
 
-The funding rate is:
+Funding is dynamic and is charged every hour on the applicable open position notional.
 
-> **0.033% per day, charged in 24 equal intervals every hour**
+The minimum funding rate is:
 
-Each hourly funding charge is 0.001375% of the applicable open position notional.
+> **0%**
+
+The funding rate may change between hourly intervals based on market conditions and Bungee's funding methodology. A 0% rate means no funding charge is applied for that interval. Funding will not be negative and will not create a funding credit for the trader.
 
 Funding is included in account equity and therefore affects:
 
@@ -241,7 +249,17 @@ Funding is included in account equity and therefore affects:
 
 The live Bungee dashboard is the source of truth for funding timestamps and charges applied to an account.
 
-## 15. Slippage and Market Execution
+## 15. Minimum Holding Period
+
+Every position must remain open for at least:
+
+> **5 minutes (300 seconds)**
+
+A position cannot be closed or reduced during the minimum holding period. This restriction applies to manual closes and to stop-loss or take-profit instructions that would close or reduce the position.
+
+Bungee may close a position before the minimum holding period ends when required for a hard breach, liquidation, market delisting, technical incident, or emergency risk control.
+
+## 16. Slippage and Market Execution
 
 Bungee may model realistic market execution, including:
 
@@ -264,7 +282,7 @@ Bungee may reject, resize, or limit orders that exceed:
 - Venue constraints
 - Internal risk controls
 
-## 16. Extreme Volatility and Market Controls
+## 17. Extreme Volatility and Market Controls
 
 Bungee may take protective action during abnormal market conditions.
 
@@ -284,7 +302,7 @@ These controls may be used when liquidity deteriorates, volatility becomes extre
 
 # Part IV — Permitted and Prohibited Trading
 
-## 17. Public Trading Content
+## 18. Public Trading Content
 
 Traders may:
 
@@ -295,7 +313,7 @@ Traders may:
 
 Bungee does not prohibit ordinary inspiration from public trading content.
 
-## 18. Copy Trading and Coordinated Execution
+## 19. Copy Trading and Coordinated Execution
 
 The following are prohibited unless expressly approved by Bungee:
 
@@ -306,7 +324,7 @@ The following are prohibited unless expressly approved by Bungee:
 - Sharing account credentials
 - Allowing another person to operate an account
 
-## 19. Cross-Account Hedging
+## 20. Cross-Account Hedging
 
 Cross-account hedging is prohibited.
 
@@ -319,7 +337,7 @@ Examples include:
 
 Bungee may assess the economic substance of the trading pattern rather than only the exact symbol traded.
 
-## 20. Technical and Market Abuse
+## 21. Technical and Market Abuse
 
 Prohibited activity includes:
 
@@ -333,7 +351,7 @@ Prohibited activity includes:
 - Trading on material non-public information
 - Artificially splitting exposure across identities or accounts to evade limits
 
-## 21. Account Sharing
+## 22. Account Sharing
 
 Accounts are personal to the approved trader.
 
@@ -349,19 +367,19 @@ The following are prohibited:
 
 # Part V — Payouts
 
-## 22. Profit Split
+## 23. Profit Split
 
 Bungee’s payout structure is:
 
 - Standard: 80% trader / 20% Bungee
 
-## 23. Minimum Payout
+## 24. Minimum Payout
 
 The minimum payout is:
 
 > **$50 after Bungee’s profit split**
 
-## 24. Payout Method
+## 25. Payout Method
 
 Initial payout method:
 
@@ -370,7 +388,7 @@ Initial payout method:
 
 Bungee may add additional payout networks or methods over time.
 
-## 25. Payout Timing
+## 26. Payout Timing
 
 Bungee targets processing valid payout requests within:
 
@@ -386,7 +404,7 @@ A payout may take longer where:
 - The payout involves unusual or thin-market profits
 - A technical or operational issue occurs
 
-## 26. Payout Eligibility
+## 27. Payout Eligibility
 
 A trader must:
 
@@ -403,7 +421,7 @@ KYC is intended to occur after passing the evaluation and before funded payouts.
 
 # Part VI — Risk Review and Enforcement
 
-## 27. Manual Payout and Risk Review
+## 28. Manual Payout and Risk Review
 
 Bungee may manually review payouts and trading activity, particularly where profits are generated from:
 
@@ -417,7 +435,7 @@ Bungee may manually review payouts and trading activity, particularly where prof
 
 A market being tradeable does not guarantee that every trading pattern or payout will be accepted without review.
 
-## 28. Discretionary Abuse Review
+## 29. Discretionary Abuse Review
 
 Bungee reserves the right to investigate behavior that appears designed to exploit the evaluation, risk, execution, or payout system, even where the exact conduct is not expressly listed in this rulebook.
 
@@ -434,7 +452,7 @@ Examples include:
 
 Bungee may evaluate the overall economic substance and trading pattern, not only an isolated trade.
 
-## 29. Enforcement Actions
+## 30. Enforcement Actions
 
 Depending on the nature and severity of a violation, Bungee may:
 
@@ -458,7 +476,7 @@ Suspected abuse may be manually reviewed before a final decision.
 
 # Part VII — Technical and Operational Rules
 
-## 30. Platform and Dashboard as Source of Truth
+## 31. Platform and Dashboard as Source of Truth
 
 Bungee’s internal records and dashboard govern:
 
@@ -478,7 +496,7 @@ Bungee’s internal records and dashboard govern:
 
 External screenshots, spreadsheets, third-party charting systems, or trader-side calculations do not override Bungee’s records.
 
-## 31. Technical Outages
+## 32. Technical Outages
 
 Bungee is not responsible for losses or missed trading opportunities caused solely by:
 
@@ -492,7 +510,7 @@ Bungee is not responsible for losses or missed trading opportunities caused sole
 
 Where an outage originates from Bungee infrastructure, Bungee may review affected accounts and determine an appropriate remedy at its discretion.
 
-## 32. Disputes and Logs
+## 33. Disputes and Logs
 
 Bungee’s internal execution, account, pricing, and risk logs will be used when reviewing account disputes.
 
@@ -500,7 +518,7 @@ A trader may raise a dispute through Bungee’s designated support process.
 
 Bungee may correct clear technical or accounting errors where supported by its internal records.
 
-## 33. Rule Changes
+## 34. Rule Changes
 
 Bungee may update:
 
@@ -526,14 +544,13 @@ The following remain open before final launch:
 1. Profit targets for Classic, Pro, and Turbo
 2. Daily loss limits for each plan
 3. Maximum static drawdown for each plan
-4. Exact daily reset time
-5. Final fixed leverage per supported asset
-6. Final max position size per supported asset
-7. Whether the $200,000 combined allocation cap remains appropriate
-8. Exact treatment of open positions during payout requests
-9. Final restricted-jurisdiction policy
-10. Final legal and compliance language
-11. Any scaling or account-growth program
+4. Final fixed leverage per supported asset
+5. Final max position size per supported asset
+6. Whether the $200,000 combined allocation cap remains appropriate
+7. Exact treatment of open positions during payout requests
+8. Final restricted-jurisdiction policy
+9. Final legal and compliance language
+10. Any scaling or account-growth program
 
 ---
 
@@ -548,11 +565,13 @@ The following remain open before final launch:
 | Breach model | Hard breach |
 | Drawdown | Static |
 | Daily loss | Equity-based, including unrealized P&L |
+| Daily reset | 12:00 UTC |
 | Supported markets | Bungee allowlist only |
 | Initial market count | 10 |
 | More markets later | Yes, after risk review |
 | Leverage | Fixed per asset; not user-adjustable |
 | Position limits | Per asset |
+| Minimum position holding period | 5 minutes |
 | Combined active allocation | $200K placeholder |
 | Cross-account hedging | Prohibited |
 | Public-content inspiration | Allowed |
@@ -561,7 +580,7 @@ The following remain open before final launch:
 | Latency / stale-price exploitation | Prohibited |
 | Execution model | Simulate, hedge, net, or externally execute at Bungee’s discretion |
 | Trading fees | Maker and taker matched at 1.5 bps (0.015%) per execution |
-| Funding | 0.033% per day, charged hourly in 24 equal 0.001375% intervals |
+| Funding | Dynamic, charged hourly, with a 0% minimum rate |
 | Standard payout split | 80/20 |
 | Minimum payout | $50 |
 | Payout asset | USDC ERC-20 initially |
