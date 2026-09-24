@@ -308,15 +308,40 @@ Funding is included in account equity and therefore affects:
 
 The live Bungee dashboard is the source of truth for funding timestamps and charges applied to an account.
 
-## 15. Minimum Holding Period
+## 15. Five-Minute Profit Eligibility and Scalping
 
-Every position must remain open for at least:
+Bungee permits short-term trading, but discourages rapid scalping patterns that rely on repeatedly entering and exiting positions over very short periods.
+
+For profit from a position to be eligible, the relevant position quantity must remain open for at least:
 
 > **5 minutes (300 seconds)**
 
-A position cannot be closed or reduced during the minimum holding period. This restriction applies to manual closes and to stop-loss or take-profit instructions that would close or reduce the position.
+If any position quantity is closed or reduced less than 300 seconds after it was opened:
 
-Bungee may close a position before the minimum holding period ends when required for a hard breach, liquidation, market delisting, technical incident, or emergency risk control.
+- Any positive realized P&L attributable to that quantity will be removed from the account and excluded from profit-target, account-performance, and payout calculations.
+- Any negative realized P&L will remain on the account and continue to count toward all applicable loss and drawdown limits.
+- Trading fees, funding charges, and other applicable costs will remain payable and will not be reversed.
+- Closing the position early is permitted and does not, by itself, constitute an account breach.
+
+This rule applies regardless of how the position is closed or reduced, including:
+
+- Manual closes
+- Market, limit, and reduce-only orders
+- Partial closes or scaling out
+- Stop-loss and take-profit execution
+- Automated strategies, bots, or APIs
+
+Each increase in a position is treated as a separate opening quantity with its own five-minute timer. Position reductions are matched against opening quantities using first-in, first-out (FIFO) accounting. Reversing a position closes the existing quantity and opens any remaining quantity in the opposite direction with a new timer.
+
+A quantity closed exactly 300 seconds or more after its opening execution is eligible for profit.
+
+Closures initiated solely by Bungee for a technical incident, market delisting, or emergency administrative action are exempt. Liquidations and trader-configured stop-loss or take-profit executions are not exempt.
+
+### Scalping-Pattern Review
+
+Repeated or systematic opening and closing of positions within five minutes may constitute a prohibited scalping pattern. Bungee may consider the frequency of short-duration trades, their share of total trading activity or realized profit, trade-duration distribution, use of automation, and reliance on minor price movements or execution conditions.
+
+If Bungee determines that a scalping pattern occurred, the applicable payout request will be denied. This review is separate from the automatic removal of profit from individual short-duration trades; removal of that profit does not prevent the broader pattern from being reviewed. Bungee may also take additional enforcement action under Section 30 where the activity involves another prohibited practice.
 
 ## 16. Slippage and Market Execution
 
@@ -472,6 +497,7 @@ A trader must:
 - Complete required KYC and compliance checks
 - Have no unresolved hard breach
 - Have no unresolved abuse or risk investigation
+- Have no detected prohibited scalping pattern for the applicable payout period
 - Meet any operational requirements shown in the Bungee dashboard
 
 KYC is intended to occur after passing the evaluation and before funded payouts.
@@ -489,6 +515,7 @@ Bungee may manually review payouts and trading activity, particularly where prof
 - Sudden liquidity events
 - Potentially manipulated markets
 - Suspicious trading patterns
+- Repeated or systematic short-duration scalping
 - Coordinated accounts
 - Activities that appear designed to exploit the program
 
@@ -605,11 +632,10 @@ The following remain open before final launch:
 3. Whether maximum position notional is enforced per account or across all accounts belonging to a trader
 4. Maximum funding rate and the dynamic funding calculation methodology
 5. Exact treatment of open positions, equity limits, and account balance during payout requests
-6. Five-minute holding-period behavior when increasing, reversing, or partially reducing a position
-7. Discount eligibility, stacking, and checkout application rules
-8. Final restricted-jurisdiction, VPN, and minimum-age policies
-9. Final legal, compliance, refund, and KYC language
-10. Any scaling or account-growth program
+6. Discount eligibility, stacking, and checkout application rules
+7. Final restricted-jurisdiction, VPN, and minimum-age policies
+8. Final legal, compliance, refund, and KYC language
+9. Any scaling or account-growth program
 
 ---
 
@@ -632,7 +658,8 @@ The following remain open before final launch:
 | More markets later | Yes, after risk review |
 | Leverage | Fixed per asset; not user-adjustable |
 | Maximum position notional | Per market; values listed in Section 8 |
-| Minimum position holding period | 5 minutes |
+| Short-duration profit eligibility | Position quantity must remain open for at least 5 minutes; earlier profit is removed |
+| Detected scalping pattern | Applicable payout request denied |
 | Combined active allocation | $200K placeholder |
 | Cross-account hedging | Prohibited |
 | Public-content inspiration | Allowed |

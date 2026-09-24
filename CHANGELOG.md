@@ -14,6 +14,8 @@ Status: Working Draft
 - Set maker and taker trading fees to 1.5 basis points per execution.
 - Set funding to a dynamic hourly rate with a 0% minimum.
 - Set the daily loss reset time to 12:00 UTC.
-- Added a five-minute minimum holding period for every position.
+- Added a five-minute profit-eligibility rule: profit from position quantities closed early is removed, while losses, fees, and funding remain.
+- Defined FIFO treatment for position increases, partial reductions, and reversals under the five-minute rule.
+- Added payout denial when Bungee detects a repeated or systematic scalping pattern.
 - Set the payout split to 80% trader / 20% Bungee.
 - Defined initial market, risk, execution, payout, and enforcement rules.
