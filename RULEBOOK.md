@@ -514,6 +514,14 @@ Bungee targets processing valid payout requests within:
 
 This is a target rather than an unconditional guarantee.
 
+After an approved payout is deducted from a funded account, the trader must wait:
+
+> **48 hours**
+
+before submitting another payout request for that same account. The cooldown begins at the timestamp when the approved gross payout is deducted from the account balance. It applies independently to each funded account.
+
+The first payout request on an account is not subject to a cooldown. A pending payout request must be resolved before another request can be submitted. A rejected, cancelled, or reversed request does not start or restart the 48-hour cooldown.
+
 A payout may take longer where:
 
 - KYC is incomplete
@@ -532,6 +540,7 @@ A trader must:
 - Have no unresolved hard breach
 - Have no unresolved abuse or risk investigation
 - Have no detected prohibited scalping pattern for the applicable payout period
+- Have completed the applicable 48-hour payout cooldown
 - Meet any operational requirements shown in the Bungee dashboard
 
 KYC is intended to occur after passing the evaluation and before funded payouts.
@@ -706,6 +715,7 @@ The following remain open before final launch:
 | Standard payout split | 80/20 |
 | Minimum payout | $50 |
 | Gross payout caps | $5K on $10K; $10K on $25K; $15K on $50K; $20K on $100K |
+| Payout cooldown | 48 hours per account after an approved payout is deducted |
 | Post-payout maximum drawdown | Rebases after every approved payout from the realized post-payout balance; remains static between payouts |
 | Payout asset | USDC ERC-20 initially |
 | Payout target | 1 business day |

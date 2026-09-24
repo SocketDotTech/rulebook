@@ -19,5 +19,6 @@ Status: Working Draft
 - Added payout denial when Bungee detects a repeated or systematic scalping pattern.
 - Set the payout split to 80% trader / 20% Bungee.
 - Added gross per-request payout caps of $5,000, $10,000, $15,000, and $20,000 for the $10K, $25K, $50K, and $100K account sizes respectively.
+- Added a 48-hour per-account cooldown beginning when an approved payout is deducted; rejected, cancelled, and reversed requests do not restart it.
 - Added a post-payout drawdown rebase: after every approved payout, the realized post-payout balance becomes the new reference for the account's static maximum drawdown.
 - Defined initial market, risk, execution, payout, and enforcement rules.
