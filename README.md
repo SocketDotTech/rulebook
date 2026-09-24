@@ -5,7 +5,7 @@ This repository maintains the current Bungee Funded Perp rulebook and permanent 
 ## Current rulebook
 
 **Current version:** v0.1 - Working Draft<br>
-**Last updated:** September 23, 2026
+**Last updated:** September 24, 2026
 
 [Read the current rulebook](./RULEBOOK.md)
 

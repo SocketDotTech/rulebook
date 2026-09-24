@@ -2,7 +2,7 @@
 
 > **Version:** v0.1 — Working Draft  
 > **Status:** Product rulebook draft; subject to legal, compliance, risk, and operational review  
-> **Last updated:** September 23, 2026
+> **Last updated:** September 24, 2026
 
 ---
 
@@ -27,21 +27,59 @@ Bungee Funded Perp uses a one-step evaluation.
 - No consistency rule
 - Hard-breach model
 - Profit target varies by evaluation type
-- Daily loss limit varies by evaluation type
+- Maximum daily loss is 3% for every evaluation type
 - Maximum total drawdown varies by evaluation type
 
 Exact evaluation parameters will be displayed on the relevant evaluation plan before purchase and inside the Bungee dashboard.
 
 ## 3. Evaluation Plans
 
-Bungee intends to offer the following evaluation sizes and tracks.
+Bungee offers three one-step evaluation tracks.
+
+### Evaluation Rules
+
+| Rule | 1-Step Classic | 1-Step Pro | 1-Step Turbo |
+| --- | ---: | ---: | ---: |
+| Profit target | 10% | 12% | 9% |
+| Maximum daily loss | 3% | 3% | 3% |
+| Maximum drawdown | 6% static | 5% static | 3% static |
+| Phases | 1 | 1 | 1 |
+| Time limit | None | None | None |
+| Standard reward split | 80% | 80% | 80% |
+
+### Standard Pricing
 
 | Account Size | Classic | Pro | Turbo |
 | -----------: | ------: | --: | ----: |
-| $10,000 | $90 | $70 | $45 |
-| $25,000 | $230 | $165 | $105 |
-| $50,000 | $430 | $300 | $195 |
-| $100,000 | $865 | $590 | $360 |
+| $10,000 | $100 | $75 | $45 |
+| $25,000 | $260 | $175 | $110 |
+| $50,000 | $480 | $330 | $210 |
+| $100,000 | $960 | $645 | $380 |
+
+### Discounts
+
+| Discount | Rate |
+| --- | ---: |
+| Referral discount | 10% |
+| Founding Trader discount | 15% |
+
+### Referral-Discounted Pricing
+
+| Account Size | Classic | Pro | Turbo |
+| -----------: | ------: | --: | ----: |
+| $10,000 | $90 | $68 | $41 |
+| $25,000 | $234 | $158 | $99 |
+| $50,000 | $432 | $297 | $189 |
+| $100,000 | $864 | $581 | $342 |
+
+### Founding-Trader-Discounted Pricing
+
+| Account Size | Classic | Pro | Turbo |
+| -----------: | ------: | --: | ----: |
+| $10,000 | $85 | $64 | $38 |
+| $25,000 | $221 | $149 | $94 |
+| $50,000 | $408 | $281 | $179 |
+| $100,000 | $816 | $548 | $323 |
 
 > Pricing and plan availability may change. The live checkout page and Bungee dashboard are the source of truth.
 
@@ -75,7 +113,7 @@ Daily loss is measured using account equity and may include:
 - Funding charges
 - Other applicable account charges
 
-The exact daily loss percentage will be defined per evaluation product and displayed in the dashboard.
+The maximum daily loss is 3% for Classic, Pro, and Turbo evaluations.
 
 The daily loss measurement resets each day at:
 
@@ -85,11 +123,13 @@ The dashboard will display the active daily loss limit and the time remaining un
 
 ## 6. Maximum Drawdown
 
-Bungee uses a static maximum drawdown unless otherwise stated for a specific plan.
+Bungee uses a static maximum drawdown:
+
+- Classic: 6%
+- Pro: 5%
+- Turbo: 3%
 
 The drawdown limit is measured against the account’s defined starting balance and does not trail upward with profits.
-
-Exact drawdown values will be defined per evaluation plan.
 
 ---
 
@@ -118,20 +158,31 @@ Bungee may add more markets over time as they pass internal risk review.
 
 ## 8. Initial Supported Markets
 
-The initial intended market list is:
+The initial supported market list is:
 
-| Asset | Fixed Leverage | Max Position Size |
-| ----- | -------------: | ----------------: |
-| BTC | TBD | TBD |
-| ETH | TBD | TBD |
-| SOL | TBD | TBD |
-| HYPE | TBD | TBD |
-| XRP | TBD | TBD |
-| BNB | TBD | TBD |
-| DOGE | TBD | TBD |
-| LINK | TBD | TBD |
-| SUI | TBD | TBD |
-| AVAX | TBD | TBD |
+| Market | Fixed Leverage | Maximum Position Notional |
+| --- | ---: | ---: |
+| BTC | 5x | $500,000 |
+| ETH | 4x | $500,000 |
+| SOL | 3x | $250,000 |
+| XRP | 3x | $100,000 |
+| HYPE | 3x | $100,000 |
+| BNB | 3x | $50,000 |
+| LINK | 2x | $20,000 |
+| AAVE | 2x | $25,000 |
+| LTC | 2x | $20,000 |
+| ADA | 2x | $20,000 |
+| GOLD | 3x | $150,000 |
+| SILVER | 2x | $75,000 |
+| CL | 2x | $75,000 |
+| SP500 | 4x | $250,000 |
+| XYZ100 | 3x | $150,000 |
+| AAPL | 2x | $25,000 |
+| MSFT | 2x | $25,000 |
+| GOOGL | 2x | $25,000 |
+| AMZN | 2x | $20,000 |
+| NVDA | 2x | $50,000 |
+| META | 2x | $20,000 |
 
 > More assets may be added over time after liquidity and risk review.  
 > The live Bungee dashboard is the source of truth for currently supported markets.
@@ -150,18 +201,18 @@ Leverage is not user-adjustable.
 
 Example:
 
-- If BTC is set to 10x leverage, BTC trades on Bungee use 10x.
-- A trader cannot manually select 5x, 2x, or another leverage amount for BTC.
+- BTC trades on Bungee use 5x leverage.
+- A trader cannot manually select another leverage amount for BTC.
 
 Bungee may change an asset’s fixed leverage prospectively based on market conditions, liquidity, volatility, venue limits, or risk considerations.
 
 The current fixed leverage for each asset will be displayed in the Bungee dashboard.
 
-## 10. Maximum Position Size
+## 10. Maximum Position Notional
 
-Each supported asset has a maximum permitted open position size.
+Each supported market has a maximum permitted total open position notional, as listed in Section 8.
 
-Position limits may vary by asset based on:
+Notional limits may vary by market based on:
 
 - Liquidity
 - Volatility
@@ -170,9 +221,9 @@ Position limits may vary by asset based on:
 - Venue constraints
 - Bungee’s internal risk limits
 
-More liquid markets may have larger position limits. Thin or volatile markets may have smaller limits.
+More liquid markets may have larger notional limits. Thin or volatile markets may have smaller limits.
 
-Bungee may reduce position limits, place a market into reduce-only mode, or disable a market entirely where necessary.
+Bungee may reduce notional limits, place a market into reduce-only mode, or disable a market entirely where necessary.
 
 ## 11. Aggregate Account Allocation
 
@@ -549,15 +600,15 @@ Changes to market-risk settings may take effect immediately where required to pr
 
 The following remain open before final launch:
 
-1. Profit targets for Classic, Pro, and Turbo
-2. Daily loss limits for each plan
-3. Maximum static drawdown for each plan
-4. Final fixed leverage per supported asset
-5. Final max position size per supported asset
-6. Whether the $200,000 combined allocation cap remains appropriate
-7. Exact treatment of open positions during payout requests
-8. Final restricted-jurisdiction policy
-9. Final legal and compliance language
+1. Whether the $200,000 combined allocation cap remains appropriate
+2. Exact daily-loss baseline and equity-floor calculation at 12:00 UTC
+3. Whether maximum position notional is enforced per account or across all accounts belonging to a trader
+4. Maximum funding rate and the dynamic funding calculation methodology
+5. Exact treatment of open positions, equity limits, and account balance during payout requests
+6. Five-minute holding-period behavior when increasing, reversing, or partially reducing a position
+7. Discount eligibility, stacking, and checkout application rules
+8. Final restricted-jurisdiction, VPN, and minimum-age policies
+9. Final legal, compliance, refund, and KYC language
 10. Any scaling or account-growth program
 
 ---
@@ -571,15 +622,16 @@ The following remain open before final launch:
 | Minimum trading days | None |
 | Consistency rule | None |
 | Breach model | Hard breach |
-| Drawdown | Static |
-| Daily loss | Equity-based, including unrealized P&L |
+| Profit target | Classic 10%; Pro 12%; Turbo 9% |
+| Drawdown | Classic 6%; Pro 5%; Turbo 3%; static |
+| Daily loss | 3%; equity-based, including unrealized P&L |
 | Daily reset | 12:00 UTC |
 | Supported markets | Bungee allowlist only |
 | Trading product | Isolated-margin perpetuals; no cross margin |
-| Initial market count | 10 |
+| Initial market count | 21 |
 | More markets later | Yes, after risk review |
 | Leverage | Fixed per asset; not user-adjustable |
-| Position limits | Per asset |
+| Maximum position notional | Per market; values listed in Section 8 |
 | Minimum position holding period | 5 minutes |
 | Combined active allocation | $200K placeholder |
 | Cross-account hedging | Prohibited |
