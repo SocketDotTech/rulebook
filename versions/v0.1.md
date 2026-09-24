@@ -129,7 +129,9 @@ Bungee uses a static maximum drawdown:
 - Pro: 5%
 - Turbo: 3%
 
-The drawdown limit is measured against the account’s defined starting balance and does not trail upward with profits.
+Before the first approved payout, the drawdown limit is measured against the account’s defined starting balance and does not trail upward with profits.
+
+After each approved funded-account payout, including the first, the maximum drawdown is rebased under Section 25. The rebase does not convert the maximum drawdown into a trailing drawdown: between approved payouts, the rebased drawdown floor remains static and does not move upward with profits.
 
 ---
 
@@ -308,15 +310,15 @@ Funding is included in account equity and therefore affects:
 
 The live Bungee dashboard is the source of truth for funding timestamps and charges applied to an account.
 
-## 15. Five-Minute Profit Eligibility and Scalping
+## 15. Two-Minute Profit Eligibility and Scalping
 
 Bungee permits short-term trading, but discourages rapid scalping patterns that rely on repeatedly entering and exiting positions over very short periods.
 
 For profit from a position to be eligible, the relevant position quantity must remain open for at least:
 
-> **5 minutes (300 seconds)**
+> **2 minutes (120 seconds)**
 
-If any position quantity is closed or reduced less than 300 seconds after it was opened:
+If any position quantity is closed or reduced less than 120 seconds after it was opened:
 
 - Any positive realized P&L attributable to that quantity will be removed from the account and excluded from profit-target, account-performance, and payout calculations.
 - Any negative realized P&L will remain on the account and continue to count toward all applicable loss and drawdown limits.
@@ -331,17 +333,17 @@ This rule applies regardless of how the position is closed or reduced, including
 - Stop-loss and take-profit execution
 - Automated strategies, bots, or APIs
 
-Each increase in a position is treated as a separate opening quantity with its own five-minute timer. Position reductions are matched against opening quantities using first-in, first-out (FIFO) accounting. Reversing a position closes the existing quantity and opens any remaining quantity in the opposite direction with a new timer.
+Each increase in a position is treated as a separate opening quantity with its own two-minute timer. Position reductions are matched against opening quantities using first-in, first-out (FIFO) accounting. Reversing a position closes the existing quantity and opens any remaining quantity in the opposite direction with a new timer.
 
-A quantity closed exactly 300 seconds or more after its opening execution is eligible for profit.
+A quantity closed exactly 120 seconds or more after its opening execution is eligible for profit.
 
 Closures initiated solely by Bungee for a technical incident, market delisting, or emergency administrative action are exempt. Liquidations and trader-configured stop-loss or take-profit executions are not exempt.
 
 ### Scalping-Pattern Review
 
-Repeated or systematic opening and closing of positions within five minutes may constitute a prohibited scalping pattern. Bungee may consider the frequency of short-duration trades, their share of total trading activity or realized profit, trade-duration distribution, use of automation, and reliance on minor price movements or execution conditions.
+Repeated or systematic opening and closing of positions within two minutes may constitute a prohibited scalping pattern. Bungee may consider the frequency of short-duration trades, their share of total trading activity or realized profit, trade-duration distribution, use of automation, and reliance on minor price movements or execution conditions.
 
-If Bungee determines that a scalping pattern occurred, the applicable payout request will be denied. This review is separate from the automatic removal of profit from individual short-duration trades; removal of that profit does not prevent the broader pattern from being reviewed. Bungee may also take additional enforcement action under Section 30 where the activity involves another prohibited practice.
+If Bungee determines that a scalping pattern occurred, the applicable payout request will be denied. This review is separate from the automatic removal of profit from individual short-duration trades; removal of that profit does not prevent the broader pattern from being reviewed. Bungee may also take additional enforcement action under Section 31 where the activity involves another prohibited practice.
 
 ## 16. Slippage and Market Execution
 
@@ -463,7 +465,48 @@ The minimum payout is:
 
 > **$50 after Bungee’s profit split**
 
-## 25. Payout Method
+## 25. Payout Caps and Post-Payout Drawdown Rebase
+
+Each payout request is subject to the following gross cap:
+
+| Account Size | Gross Payout Cap per Request |
+| -----------: | ---------------------------: |
+| $10,000 | $5,000 |
+| $25,000 | $10,000 |
+| $50,000 | $15,000 |
+| $100,000 | $20,000 |
+
+The cap applies to the gross payout request before the 80% trader / 20% Bungee profit split. Any withdrawable profit above the cap remains in the account and may be requested in a later eligible payout cycle.
+
+When an approved payout is deducted from the funded account:
+
+1. The gross approved payout amount is deducted from the account balance.
+2. The realized account balance immediately after that deduction becomes the account’s new drawdown reference balance.
+3. A new static maximum drawdown floor is calculated using the funded account’s applicable drawdown percentage:
+
+> **New maximum drawdown floor = post-payout realized balance × (1 − applicable maximum drawdown percentage)**
+
+The applicable percentages remain:
+
+- Classic: 6%
+- Pro: 5%
+- Turbo: 3%
+
+The rebase occurs after every approved payout, including the first. It does not occur for a pending, rejected, cancelled, or reversed payout request. After rebasing, the new floor remains static until another approved payout is deducted; ordinary trading profits do not cause it to trail upward.
+
+### Worked Example
+
+A $10,000 Classic funded account grows to a realized balance of $20,000. The trader requests the applicable gross payout cap of $5,000:
+
+- Gross payout deducted from the account: $5,000
+- Trader share at the standard 80% split: $4,000
+- Post-payout realized account balance: $15,000
+- New Classic maximum drawdown floor: $15,000 × 94% = $14,100
+- Available maximum-drawdown buffer immediately after the payout: $900
+
+The account therefore continues trading from a $15,000 realized balance with a static breach floor of $14,100. The drawdown is no longer calculated from the original $10,000 account size.
+
+## 26. Payout Method
 
 Initial payout method:
 
@@ -472,7 +515,7 @@ Initial payout method:
 
 Bungee may add additional payout networks or methods over time.
 
-## 26. Payout Timing
+## 27. Payout Timing
 
 Bungee targets processing valid payout requests within:
 
@@ -488,7 +531,7 @@ A payout may take longer where:
 - The payout involves unusual or thin-market profits
 - A technical or operational issue occurs
 
-## 27. Payout Eligibility
+## 28. Payout Eligibility
 
 A trader must:
 
@@ -506,7 +549,7 @@ KYC is intended to occur after passing the evaluation and before funded payouts.
 
 # Part VI — Risk Review and Enforcement
 
-## 28. Manual Payout and Risk Review
+## 29. Manual Payout and Risk Review
 
 Bungee may manually review payouts and trading activity, particularly where profits are generated from:
 
@@ -521,7 +564,7 @@ Bungee may manually review payouts and trading activity, particularly where prof
 
 A market being tradeable does not guarantee that every trading pattern or payout will be accepted without review.
 
-## 29. Discretionary Abuse Review
+## 30. Discretionary Abuse Review
 
 Bungee reserves the right to investigate behavior that appears designed to exploit the evaluation, risk, execution, or payout system, even where the exact conduct is not expressly listed in this rulebook.
 
@@ -538,7 +581,7 @@ Examples include:
 
 Bungee may evaluate the overall economic substance and trading pattern, not only an isolated trade.
 
-## 30. Enforcement Actions
+## 31. Enforcement Actions
 
 Depending on the nature and severity of a violation, Bungee may:
 
@@ -562,7 +605,7 @@ Suspected abuse may be manually reviewed before a final decision.
 
 # Part VII — Technical and Operational Rules
 
-## 31. Platform and Dashboard as Source of Truth
+## 32. Platform and Dashboard as Source of Truth
 
 Bungee’s internal records and dashboard govern:
 
@@ -582,7 +625,7 @@ Bungee’s internal records and dashboard govern:
 
 External screenshots, spreadsheets, third-party charting systems, or trader-side calculations do not override Bungee’s records.
 
-## 32. Technical Outages
+## 33. Technical Outages
 
 Bungee is not responsible for losses or missed trading opportunities caused solely by:
 
@@ -596,7 +639,7 @@ Bungee is not responsible for losses or missed trading opportunities caused sole
 
 Where an outage originates from Bungee infrastructure, Bungee may review affected accounts and determine an appropriate remedy at its discretion.
 
-## 33. Disputes and Logs
+## 34. Disputes and Logs
 
 Bungee’s internal execution, account, pricing, and risk logs will be used when reviewing account disputes.
 
@@ -604,7 +647,7 @@ A trader may raise a dispute through Bungee’s designated support process.
 
 Bungee may correct clear technical or accounting errors where supported by its internal records.
 
-## 34. Rule Changes
+## 35. Rule Changes
 
 Bungee may update:
 
@@ -631,7 +674,7 @@ The following remain open before final launch:
 2. Exact daily-loss baseline and equity-floor calculation at 12:00 UTC
 3. Whether maximum position notional is enforced per account or across all accounts belonging to a trader
 4. Maximum funding rate and the dynamic funding calculation methodology
-5. Exact treatment of open positions, equity limits, and account balance during payout requests
+5. Exact treatment of open positions and equity limits while a payout request is pending
 6. Discount eligibility, stacking, and checkout application rules
 7. Final restricted-jurisdiction, VPN, and minimum-age policies
 8. Final legal, compliance, refund, and KYC language
@@ -658,7 +701,7 @@ The following remain open before final launch:
 | More markets later | Yes, after risk review |
 | Leverage | Fixed per asset; not user-adjustable |
 | Maximum position notional | Per market; values listed in Section 8 |
-| Short-duration profit eligibility | Position quantity must remain open for at least 5 minutes; earlier profit is removed |
+| Short-duration profit eligibility | Position quantity must remain open for at least 2 minutes; earlier profit is removed |
 | Detected scalping pattern | Applicable payout request denied |
 | Combined active allocation | $200K placeholder |
 | Cross-account hedging | Prohibited |
@@ -671,6 +714,8 @@ The following remain open before final launch:
 | Funding | Dynamic, charged hourly, with a 0% minimum rate |
 | Standard payout split | 80/20 |
 | Minimum payout | $50 |
+| Gross payout caps | $5K on $10K; $10K on $25K; $15K on $50K; $20K on $100K |
+| Post-payout maximum drawdown | Rebases after every approved payout from the realized post-payout balance; remains static between payouts |
 | Payout asset | USDC ERC-20 initially |
 | Payout target | 1 business day |
 | KYC | After pass / before funded payout |
