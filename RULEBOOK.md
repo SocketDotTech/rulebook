@@ -117,7 +117,7 @@ The maximum daily loss is 3% for Classic, Pro, and Turbo evaluations.
 
 The daily loss measurement resets each day at:
 
-> **12:00 UTC**
+> **00:00 UTC**
 
 The dashboard will display the active daily loss limit and the time remaining until the next reset.
 
@@ -343,7 +343,7 @@ Closures initiated solely by Bungee for a technical incident, market delisting, 
 
 Repeated or systematic opening and closing of positions within two minutes may constitute a prohibited scalping pattern. Bungee may consider the frequency of short-duration trades, their share of total trading activity or realized profit, trade-duration distribution, use of automation, and reliance on minor price movements or execution conditions.
 
-If Bungee determines that a scalping pattern occurred, the applicable payout request will be denied. This review is separate from the automatic removal of profit from individual short-duration trades; removal of that profit does not prevent the broader pattern from being reviewed. Bungee may also take additional enforcement action under Section 31 where the activity involves another prohibited practice.
+If Bungee determines that a scalping pattern occurred, the applicable payout request will be denied. This review is separate from the automatic removal of profit from individual short-duration trades; removal of that profit does not prevent the broader pattern from being reviewed. Bungee may also take additional enforcement action under Section 30 where the activity involves another prohibited practice.
 
 ## 16. Slippage and Market Execution
 
@@ -506,16 +506,7 @@ A $10,000 Classic funded account grows to a realized balance of $20,000. The tra
 
 The account therefore continues trading from a $15,000 realized balance with a static breach floor of $14,100. The drawdown is no longer calculated from the original $10,000 account size.
 
-## 26. Payout Method
-
-Initial payout method:
-
-- USDC
-- Ethereum / ERC-20
-
-Bungee may add additional payout networks or methods over time.
-
-## 27. Payout Timing
+## 26. Payout Timing
 
 Bungee targets processing valid payout requests within:
 
@@ -531,7 +522,7 @@ A payout may take longer where:
 - The payout involves unusual or thin-market profits
 - A technical or operational issue occurs
 
-## 28. Payout Eligibility
+## 27. Payout Eligibility
 
 A trader must:
 
@@ -549,7 +540,7 @@ KYC is intended to occur after passing the evaluation and before funded payouts.
 
 # Part VI — Risk Review and Enforcement
 
-## 29. Manual Payout and Risk Review
+## 28. Manual Payout and Risk Review
 
 Bungee may manually review payouts and trading activity, particularly where profits are generated from:
 
@@ -564,7 +555,7 @@ Bungee may manually review payouts and trading activity, particularly where prof
 
 A market being tradeable does not guarantee that every trading pattern or payout will be accepted without review.
 
-## 30. Discretionary Abuse Review
+## 29. Discretionary Abuse Review
 
 Bungee reserves the right to investigate behavior that appears designed to exploit the evaluation, risk, execution, or payout system, even where the exact conduct is not expressly listed in this rulebook.
 
@@ -581,7 +572,7 @@ Examples include:
 
 Bungee may evaluate the overall economic substance and trading pattern, not only an isolated trade.
 
-## 31. Enforcement Actions
+## 30. Enforcement Actions
 
 Depending on the nature and severity of a violation, Bungee may:
 
@@ -605,7 +596,7 @@ Suspected abuse may be manually reviewed before a final decision.
 
 # Part VII — Technical and Operational Rules
 
-## 32. Platform and Dashboard as Source of Truth
+## 31. Platform and Dashboard as Source of Truth
 
 Bungee’s internal records and dashboard govern:
 
@@ -625,7 +616,7 @@ Bungee’s internal records and dashboard govern:
 
 External screenshots, spreadsheets, third-party charting systems, or trader-side calculations do not override Bungee’s records.
 
-## 33. Technical Outages
+## 32. Technical Outages
 
 Bungee is not responsible for losses or missed trading opportunities caused solely by:
 
@@ -639,7 +630,7 @@ Bungee is not responsible for losses or missed trading opportunities caused sole
 
 Where an outage originates from Bungee infrastructure, Bungee may review affected accounts and determine an appropriate remedy at its discretion.
 
-## 34. Disputes and Logs
+## 33. Disputes and Logs
 
 Bungee’s internal execution, account, pricing, and risk logs will be used when reviewing account disputes.
 
@@ -647,7 +638,7 @@ A trader may raise a dispute through Bungee’s designated support process.
 
 Bungee may correct clear technical or accounting errors where supported by its internal records.
 
-## 35. Rule Changes
+## 34. Rule Changes
 
 Bungee may update:
 
@@ -671,7 +662,7 @@ Changes to market-risk settings may take effect immediately where required to pr
 The following remain open before final launch:
 
 1. Whether the $200,000 combined allocation cap remains appropriate
-2. Exact daily-loss baseline and equity-floor calculation at 12:00 UTC
+2. Exact daily-loss baseline and equity-floor calculation at 00:00 UTC
 3. Whether maximum position notional is enforced per account or across all accounts belonging to a trader
 4. Maximum funding rate and the dynamic funding calculation methodology
 5. Exact treatment of open positions and equity limits while a payout request is pending
@@ -694,7 +685,7 @@ The following remain open before final launch:
 | Profit target | Classic 10%; Pro 12%; Turbo 9% |
 | Drawdown | Classic 6%; Pro 5%; Turbo 3%; static |
 | Daily loss | 3%; equity-based, including unrealized P&L |
-| Daily reset | 12:00 UTC |
+| Daily reset | 00:00 UTC |
 | Supported markets | Bungee allowlist only |
 | Trading product | Isolated-margin perpetuals; no cross margin |
 | Initial market count | 21 |

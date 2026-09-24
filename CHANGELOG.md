@@ -13,7 +13,7 @@ Status: Working Draft
 - Finalized fixed leverage and maximum position notional for 21 supported markets.
 - Set maker and taker trading fees to 1.5 basis points per execution.
 - Set funding to a dynamic hourly rate with a 0% minimum.
-- Set the daily loss reset time to 12:00 UTC.
+- Set the daily loss reset time to 00:00 UTC.
 - Set the minimum holding period to two minutes: profit from position quantities closed earlier is removed, while losses, fees, and funding remain.
 - Defined FIFO treatment for position increases, partial reductions, and reversals under the two-minute rule.
 - Added payout denial when Bungee detects a repeated or systematic scalping pattern.
