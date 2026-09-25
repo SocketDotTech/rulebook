@@ -1,6 +1,6 @@
 # Bungee Funded Perp Rulebook
 
-> **Version:** v0.1 — Working Draft  
+> **Version:** v0.1 — Working Draft\
 > **Status:** Product rulebook draft; subject to legal, compliance, risk, and operational review  
 > **Last updated:** September 25, 2026
 
@@ -104,9 +104,9 @@ Bungee uses a static maximum drawdown:
 - Pro: 5%
 - Turbo: 3%
 
-Before the first approved payout, the drawdown limit is measured against the account’s defined starting balance and does not trail upward with profits.
+The drawdown limit is measured against the account’s defined starting balance and does not trail upward with profits.
 
-After each approved funded-account payout, including the first, the maximum drawdown is rebased under Section 25. The rebase does not convert the maximum drawdown into a trailing drawdown: between approved payouts, the rebased drawdown floor remains static and does not move upward with profits.
+After each approved funded-account payout, including the first, the account resets to its default state under Section 25. Its original starting balance and default risk limits are restored; unpaid eligible profits remain separately claimable and do not increase the trading balance or drawdown allowance.
 
 ---
 
@@ -439,26 +439,23 @@ The minimum payout is:
 
 > **$50 after Bungee’s profit split**
 
-## 25. Payout Caps and Post-Payout Drawdown Rebase
+## 25. Payout Cap and Post-Payout Account Reset
 
-Each payout request is subject to the following gross cap:
+Every funded account, regardless of account size or evaluation track, has the same maximum gross payout cap per request:
 
-| Account Size | Gross Payout Cap per Request |
-| -----------: | ---------------------------: |
-| $10,000 | $5,000 |
-| $25,000 | $10,000 |
-| $50,000 | $15,000 |
-| $100,000 | $20,000 |
+> **$20,000 USD**
 
-The cap applies to the gross payout request before the 80% trader / 20% Bungee profit split. Any withdrawable profit above the cap remains in the account and may be requested in a later eligible payout cycle.
+The cap applies to the gross payout request before the 80% trader / 20% Bungee profit split. It is a per-request cap for each account, not a lifetime limit on claimable profits.
 
-When an approved payout is deducted from the funded account:
+When an approved payout is processed:
 
-1. The gross approved payout amount is deducted from the account balance.
-2. The realized account balance immediately after that deduction becomes the account’s new drawdown reference balance.
-3. A new static maximum drawdown floor is calculated using the funded account’s applicable drawdown percentage:
+1. The gross approved payout amount is deducted from the account’s eligible claimable profits.
+2. Any remaining unpaid eligible profits are recorded separately in the Bungee account ledger and remain claimable in later eligible payout cycles, subject to the same cap, profit split, cooldown, and payout eligibility rules. The reset does not forfeit these profits.
+3. The funded trading account resets to its default state: its original starting balance and default daily-loss and maximum-drawdown limits for the applicable account size and track are restored. Separately recorded claimable profits are excluded from the trading balance, trading equity, and risk-limit calculations.
 
-> **New maximum drawdown floor = post-payout realized balance × (1 − applicable maximum drawdown percentage)**
+The static maximum drawdown floor after the reset is:
+
+> **Maximum drawdown floor = original starting balance × (1 − applicable maximum drawdown percentage)**
 
 The applicable percentages remain:
 
@@ -466,19 +463,20 @@ The applicable percentages remain:
 - Pro: 5%
 - Turbo: 3%
 
-The rebase occurs after every approved payout, including the first. It does not occur for a pending, rejected, cancelled, or reversed payout request. After rebasing, the new floor remains static until another approved payout is deducted; ordinary trading profits do not cause it to trail upward.
+The reset occurs after every approved payout, including the first. A pending, rejected, cancelled, or reversed payout request does not trigger a reset. The account remains funded; the payout reset does not require a new evaluation or clear an unresolved breach or investigation.
 
 ### Worked Example
 
-A $10,000 Classic funded account grows to a realized balance of $20,000. The trader requests the applicable gross payout cap of $5,000:
+A $10,000 Classic funded account grows to a realized balance of $40,000, including $30,000 of eligible profits. The trader requests the maximum gross payout of $20,000:
 
-- Gross payout deducted from the account: $5,000
-- Trader share at the standard 80% split: $4,000
-- Post-payout realized account balance: $15,000
-- New Classic maximum drawdown floor: $15,000 × 94% = $14,100
-- Available maximum-drawdown buffer immediately after the payout: $900
+- Gross payout deducted from eligible claimable profits: $20,000
+- Trader share at the standard 80% split: $16,000
+- Remaining gross eligible profits recorded separately and still claimable: $10,000
+- Trading account balance after reset: $10,000
+- Restored Classic maximum drawdown floor: $10,000 × 94% = $9,400
+- Default maximum-drawdown buffer after reset: $600
 
-The account therefore continues trading from a $15,000 realized balance with a static breach floor of $14,100. The drawdown is no longer calculated from the original $10,000 account size.
+The remaining $10,000 of gross eligible profits may be requested after the 24-hour cooldown, subject to payout eligibility. They do not increase the reset account’s trading balance or drawdown allowance.
 
 ## 26. Payout Timing
 
@@ -488,11 +486,11 @@ Bungee targets processing valid payout requests within:
 
 This is a target rather than an unconditional guarantee.
 
-After an approved payout is deducted from a funded account, the trader must wait:
+After an approved payout is processed for a funded account, the trader must wait:
 
 > **24 hours**
 
-before submitting another payout request for that same account. The cooldown begins at the timestamp when the approved gross payout is deducted from the account balance. It applies independently to each funded account.
+before submitting another payout request for that same account. The cooldown begins at the timestamp when the approved gross payout is deducted from eligible claimable profits and the account reset is recorded. It applies independently to each funded account.
 
 The first payout request on an account is not subject to a cooldown. A pending payout request must be resolved before another request can be submitted. A rejected, cancelled, or reversed request does not start or restart the 24-hour cooldown.
 
@@ -686,9 +684,10 @@ The following remain open before final launch:
 | Funding | Dynamic, charged hourly, with a 0% minimum rate |
 | Standard payout split | 80/20 |
 | Minimum payout | $50 |
-| Gross payout caps | $5K on $10K; $10K on $25K; $15K on $50K; $20K on $100K |
-| Payout cooldown | 24 hours per account after an approved payout is deducted |
-| Post-payout maximum drawdown | Rebases after every approved payout from the realized post-payout balance; remains static between payouts |
+| Gross payout cap | $20,000 USD per request for every account size and track, before the profit split |
+| Payout cooldown | 24 hours per account after an approved payout is processed and the reset is recorded |
+| Post-payout account reset | Original starting balance and default risk limits restored after every approved payout |
+| Unpaid eligible profits | Remain separately claimable after reset; excluded from trading balance, equity, and risk limits |
 | Payout asset | USDC ERC-20 initially |
 | Payout target | 1 business day |
 | KYC | After pass / before funded payout |
