@@ -2,7 +2,7 @@
 
 > **Version:** v0.1 — Working Draft  
 > **Status:** Product rulebook draft; subject to legal, compliance, risk, and operational review  
-> **Last updated:** September 24, 2026
+> **Last updated:** September 25, 2026
 
 ---
 
@@ -51,10 +51,10 @@ Bungee offers three one-step evaluation tracks.
 
 | Account Size | Classic | Pro | Turbo |
 | -----------: | ------: | --: | ----: |
-| $10,000 | $100 | $75 | $45 |
-| $25,000 | $260 | $175 | $110 |
-| $50,000 | $480 | $330 | $210 |
-| $100,000 | $960 | $645 | $380 |
+| $10,000 | $110 | $85 | $50 |
+| $25,000 | $275 | $200 | $120 |
+| $50,000 | $520 | $380 | $220 |
+| $100,000 | $1,000 | $750 | $400 |
 
 ### Discounts
 
@@ -67,19 +67,19 @@ Bungee offers three one-step evaluation tracks.
 
 | Account Size | Classic | Pro | Turbo |
 | -----------: | ------: | --: | ----: |
-| $10,000 | $90 | $68 | $41 |
-| $25,000 | $234 | $158 | $99 |
-| $50,000 | $432 | $297 | $189 |
-| $100,000 | $864 | $581 | $342 |
+| $10,000 | $99 | $77 | $45 |
+| $25,000 | $248 | $180 | $108 |
+| $50,000 | $468 | $342 | $198 |
+| $100,000 | $900 | $675 | $360 |
 
 ### Founding-Trader-Discounted Pricing
 
 | Account Size | Classic | Pro | Turbo |
 | -----------: | ------: | --: | ----: |
-| $10,000 | $85 | $64 | $38 |
-| $25,000 | $221 | $149 | $94 |
-| $50,000 | $408 | $281 | $179 |
-| $100,000 | $816 | $548 | $323 |
+| $10,000 | $94 | $72 | $43 |
+| $25,000 | $234 | $170 | $102 |
+| $50,000 | $442 | $323 | $187 |
+| $100,000 | $850 | $638 | $340 |
 
 > Pricing and plan availability may change. The live checkout page and Bungee dashboard are the source of truth.
 
