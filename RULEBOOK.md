@@ -56,31 +56,6 @@ Bungee offers three one-step evaluation tracks.
 | $50,000 | $520 | $380 | $220 |
 | $100,000 | $1,000 | $750 | $400 |
 
-### Discounts
-
-| Discount | Rate |
-| --- | ---: |
-| Referral discount | 10% |
-| Founding Trader discount | 15% |
-
-### Referral-Discounted Pricing
-
-| Account Size | Classic | Pro | Turbo |
-| -----------: | ------: | --: | ----: |
-| $10,000 | $99 | $77 | $45 |
-| $25,000 | $248 | $180 | $108 |
-| $50,000 | $468 | $342 | $198 |
-| $100,000 | $900 | $675 | $360 |
-
-### Founding-Trader-Discounted Pricing
-
-| Account Size | Classic | Pro | Turbo |
-| -----------: | ------: | --: | ----: |
-| $10,000 | $94 | $72 | $43 |
-| $25,000 | $234 | $170 | $102 |
-| $50,000 | $442 | $323 | $187 |
-| $100,000 | $850 | $638 | $340 |
-
 > Pricing and plan availability may change. The live checkout page and Bungee dashboard are the source of truth.
 
 ## 4. Hard Breach Policy
@@ -675,10 +650,9 @@ The following remain open before final launch:
 3. Whether maximum position notional is enforced per account or across all accounts belonging to a trader
 4. Maximum funding rate and the dynamic funding calculation methodology
 5. Exact treatment of open positions and equity limits while a payout request is pending
-6. Discount eligibility, stacking, and checkout application rules
-7. Final restricted-jurisdiction, VPN, and minimum-age policies
-8. Final legal, compliance, refund, and KYC language
-9. Any scaling or account-growth program
+6. Final restricted-jurisdiction, VPN, and minimum-age policies
+7. Final legal, compliance, refund, and KYC language
+8. Any scaling or account-growth program
 
 ---
 
