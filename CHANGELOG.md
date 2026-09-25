@@ -18,8 +18,9 @@ Status: Working Draft
 - Defined FIFO treatment for position increases, partial reductions, and reversals under the two-minute rule.
 - Added payout denial when Bungee detects a repeated or systematic scalping pattern.
 - Set the payout split to 80% trader / 20% Bungee.
-- Added gross per-request payout caps of $5,000, $10,000, $15,000, and $20,000 for the $10K, $25K, $50K, and $100K account sizes respectively.
-- Added a 24-hour per-account cooldown beginning when an approved payout is deducted; rejected, cancelled, and reversed requests do not restart it.
+- Set the maximum gross payout to $20,000 USD per request for every account size and track, before the 80/20 profit split.
+- Set a 24-hour per-account cooldown beginning when an approved payout is processed and the account reset is recorded; rejected, cancelled, and reversed requests do not restart it.
 - Set the maximum combined active allocation to $100,000 in nominal account size per trader.
-- Added a post-payout drawdown rebase: after every approved payout, the realized post-payout balance becomes the new reference for the account's static maximum drawdown.
+- Reset the funded account to its original starting balance and default risk limits after every approved payout.
+- Preserved unpaid eligible profits as separately claimable amounts after reset, excluded from trading balance, equity, and risk-limit calculations.
 - Defined initial market, risk, execution, payout, and enforcement rules.
