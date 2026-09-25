@@ -206,7 +206,7 @@ Bungee may reduce notional limits, place a market into reduce-only mode, or disa
 
 A trader may hold multiple active Bungee Funded Perp accounts, subject to a current maximum combined allocation of:
 
-> **$200,000 total active account size**
+> **$100,000 total active account size**
 
 This refers to the combined nominal size of the trader’s active Bungee Funded Perp accounts.
 
@@ -218,10 +218,9 @@ It is not:
 
 Example:
 
-- Two $100,000 accounts = $200,000 combined allocation
-- Four $50,000 accounts = $200,000 combined allocation
-
-> **Placeholder:** The $200,000 cap may change once Bungee finalizes its maximum account sizes and product lineup.
+- One $100,000 account = $100,000 combined allocation
+- Two $50,000 accounts = $100,000 combined allocation
+- Four $25,000 accounts = $100,000 combined allocation
 
 Each account remains subject to its own risk limits and position restrictions.
 
@@ -491,11 +490,11 @@ This is a target rather than an unconditional guarantee.
 
 After an approved payout is deducted from a funded account, the trader must wait:
 
-> **48 hours**
+> **24 hours**
 
 before submitting another payout request for that same account. The cooldown begins at the timestamp when the approved gross payout is deducted from the account balance. It applies independently to each funded account.
 
-The first payout request on an account is not subject to a cooldown. A pending payout request must be resolved before another request can be submitted. A rejected, cancelled, or reversed request does not start or restart the 48-hour cooldown.
+The first payout request on an account is not subject to a cooldown. A pending payout request must be resolved before another request can be submitted. A rejected, cancelled, or reversed request does not start or restart the 24-hour cooldown.
 
 A payout may take longer where:
 
@@ -515,7 +514,7 @@ A trader must:
 - Have no unresolved hard breach
 - Have no unresolved abuse or risk investigation
 - Have no detected prohibited scalping pattern for the applicable payout period
-- Have completed the applicable 48-hour payout cooldown
+- Have completed the applicable 24-hour payout cooldown
 - Meet any operational requirements shown in the Bungee dashboard
 
 KYC is intended to occur after passing the evaluation and before funded payouts.
@@ -645,14 +644,13 @@ Changes to market-risk settings may take effect immediately where required to pr
 
 The following remain open before final launch:
 
-1. Whether the $200,000 combined allocation cap remains appropriate
-2. Exact daily-loss baseline and equity-floor calculation at 00:00 UTC
-3. Whether maximum position notional is enforced per account or across all accounts belonging to a trader
-4. Maximum funding rate and the dynamic funding calculation methodology
-5. Exact treatment of open positions and equity limits while a payout request is pending
-6. Final restricted-jurisdiction, VPN, and minimum-age policies
-7. Final legal, compliance, refund, and KYC language
-8. Any scaling or account-growth program
+1. Exact daily-loss baseline and equity-floor calculation at 00:00 UTC
+2. Whether maximum position notional is enforced per account or across all accounts belonging to a trader
+3. Maximum funding rate and the dynamic funding calculation methodology
+4. Exact treatment of open positions and equity limits while a payout request is pending
+5. Final restricted-jurisdiction, VPN, and minimum-age policies
+6. Final legal, compliance, refund, and KYC language
+7. Any scaling or account-growth program
 
 ---
 
@@ -677,7 +675,7 @@ The following remain open before final launch:
 | Maximum position notional | Per market; values listed in Section 8 |
 | Short-duration profit eligibility | Position quantity must remain open for at least 2 minutes; earlier profit is removed |
 | Detected scalping pattern | Applicable payout request denied |
-| Combined active allocation | $200K placeholder |
+| Combined active allocation | $100K maximum nominal account size across all active accounts |
 | Cross-account hedging | Prohibited |
 | Public-content inspiration | Allowed |
 | Automated/coordinated copy trading | Prohibited |
@@ -689,7 +687,7 @@ The following remain open before final launch:
 | Standard payout split | 80/20 |
 | Minimum payout | $50 |
 | Gross payout caps | $5K on $10K; $10K on $25K; $15K on $50K; $20K on $100K |
-| Payout cooldown | 48 hours per account after an approved payout is deducted |
+| Payout cooldown | 24 hours per account after an approved payout is deducted |
 | Post-payout maximum drawdown | Rebases after every approved payout from the realized post-payout balance; remains static between payouts |
 | Payout asset | USDC ERC-20 initially |
 | Payout target | 1 business day |
