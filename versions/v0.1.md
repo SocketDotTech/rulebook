@@ -1,9 +1,5 @@
 # Bungee Funded Perp Rulebook
 
-> **Version:** v0.1 — Working Draft\
-> **Status:** Product rulebook draft; subject to legal, compliance, risk, and operational review  
-> **Last updated:** September 26, 2026
-
 ---
 
 ## 1. Purpose
@@ -128,36 +124,9 @@ Venue listing alone does not make an asset eligible for Bungee Funded Perp.
 
 Bungee may add more markets over time as they pass internal risk review.
 
-## 8. Initial Supported Markets
+## 8. Supported Markets
 
-The initial supported market list is:
-
-| Market | Fixed Leverage | Maximum Position Notional |
-| --- | ---: | ---: |
-| BTC | 5x | $500,000 |
-| ETH | 4x | $500,000 |
-| SOL | 3x | $250,000 |
-| XRP | 3x | $100,000 |
-| HYPE | 3x | $100,000 |
-| BNB | 3x | $50,000 |
-| LINK | 2x | $20,000 |
-| AAVE | 2x | $25,000 |
-| LTC | 2x | $20,000 |
-| ADA | 2x | $20,000 |
-| GOLD | 3x | $150,000 |
-| SILVER | 2x | $75,000 |
-| CL | 2x | $75,000 |
-| SP500 | 4x | $250,000 |
-| XYZ100 | 3x | $150,000 |
-| AAPL | 2x | $25,000 |
-| MSFT | 2x | $25,000 |
-| GOOGL | 2x | $25,000 |
-| AMZN | 2x | $20,000 |
-| NVDA | 2x | $50,000 |
-| META | 2x | $20,000 |
-
-> More assets may be added over time after liquidity and risk review.  
-> The live Bungee dashboard is the source of truth for currently supported markets.
+For currently supported markets, fixed leverage, and maximum position limits, visit the [Bungee assets page](https://app.bungee.exchange/funded-perps/assets).
 
 ## 9. Isolated Perpetuals and Fixed Leverage
 
@@ -182,7 +151,7 @@ The current fixed leverage for each asset will be displayed in the Bungee dashbo
 
 ## 10. Maximum Position Notional
 
-Each supported market has a maximum permitted total open position notional, as listed in Section 8.
+Each supported market has a maximum permitted total open position notional, as shown on the Bungee assets page linked in Section 8.
 
 Notional limits may vary by market based on:
 
@@ -423,7 +392,13 @@ Every funded account, regardless of account size or evaluation track, has a maxi
 
 > **$20,000 USD**
 
-The cap applies before the 80% trader / 20% Bungee profit split. Each funded account may receive no more than $20,000 USD in gross approved payouts in any rolling 24-hour window, measured using payout-processing timestamps. The window does not reset at midnight UTC. Splitting a payout into multiple requests does not increase this limit, and the per-account cooldown in Section 26 still applies. This is not a lifetime limit on claimable profits.
+The cap applies before the 80% trader / 20% Bungee profit split and limits total gross payouts from each account to $20,000 in any rolling 24-hour period, including payouts split across multiple requests.
+
+Each processed payout counts toward the limit for 24 hours from its processing timestamp. During that time, you may request additional payouts up to your remaining allowance, subject to payout eligibility.
+
+If you withdraw the full $20,000 in one payout, you must wait 24 hours before another payout. If you withdraw it through multiple payouts, allowance becomes available progressively as each payout passes its 24-hour mark. The window does not reset at midnight.
+
+The cap applies independently to each funded account and is not a lifetime limit on claimable profits.
 
 When an approved payout is processed:
 
@@ -464,13 +439,9 @@ Bungee targets processing valid payout requests within:
 
 This is a target rather than an unconditional guarantee.
 
-After an approved payout is processed for a funded account, the trader must wait:
+The payout cooldown applies to each processed payout amount for 24 hours, as described in Section 25. Additional payouts may be requested during this period while sufficient allowance remains under the $20,000 cap. A payout’s processing timestamp is the time when its approved gross amount is deducted from eligible claimable profits and the account reset is recorded.
 
-> **24 hours**
-
-before submitting another payout request for that same account. The cooldown begins at the timestamp when the approved gross payout is deducted from eligible claimable profits and the account reset is recorded. It applies independently to each funded account.
-
-The first payout request on an account is not subject to a cooldown. A pending payout request must be resolved before another request can be submitted. A rejected, cancelled, or reversed request does not start or restart the 24-hour cooldown.
+A pending payout request must be resolved before another request can be submitted. Pending, rejected, or cancelled requests do not consume payout allowance or start a cooldown. If a processed payout is reversed, its gross amount no longer counts toward the cap.
 
 A payout may take longer where:
 
@@ -490,7 +461,7 @@ A trader must:
 - Have no unresolved hard breach
 - Have no unresolved abuse or risk investigation
 - Have no confirmed prohibited bot activity, HFT, or scalping for the applicable payout period
-- Have completed the applicable 24-hour payout cooldown
+- Have completed any applicable payout cooldown, with sufficient allowance available for the requested gross amount
 - Meet any operational requirements shown in the Bungee dashboard
 
 KYC is intended to occur after passing the evaluation and before funded payouts.
@@ -613,7 +584,3 @@ Bungee may update:
 Material changes should be communicated through the Bungee platform or applicable terms.
 
 Changes to market-risk settings may take effect immediately where required to protect traders, Bungee, venues, or liquidity providers.
-
----
-
-> **Important:** This document is a product rulebook draft, not final legal terms. Before launch, it should be reconciled with Bungee’s actual execution infrastructure, risk engine, KYC/AML process, supported jurisdictions, venue relationships, and legal documentation.
