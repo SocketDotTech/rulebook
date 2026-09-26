@@ -388,7 +388,11 @@ The minimum payout is:
 
 ## 25. Payout Cap and Post-Payout Account Reset
 
-Each funded account has a maximum gross payout allowance of **$20,000 USD in any rolling 24-hour period**, regardless of account size or evaluation track. This limit applies before the 80% trader / 20% Bungee profit split.
+Every funded account, regardless of account size or evaluation track, has a maximum gross payout cap per request per 24 hours:
+
+> **$20,000 USD**
+
+The cap applies before the 80% trader / 20% Bungee profit split and limits total gross payouts from each account to $20,000 in any rolling 24-hour period, including payouts split across multiple requests.
 
 Each processed payout counts toward the limit for 24 hours from its processing timestamp. During that time, you may request additional payouts up to your remaining allowance, subject to payout eligibility.
 
