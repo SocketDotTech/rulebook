@@ -4,8 +4,6 @@ This file records material changes to the Bungee Funded Perp rulebook.
 
 ## v0.1 - 2026-09-02
 
-Status: Working Draft
-
 - Established the one-step evaluation and hard-breach model.
 - Defined all supported trading products as isolated-margin perpetual contracts with no cross margin.
 - Finalized Classic, Pro, and Turbo profit targets, daily loss limits, static drawdowns, and one-step structure.
