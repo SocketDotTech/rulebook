@@ -582,7 +582,3 @@ Bungee may update:
 Material changes should be communicated through the Bungee platform or applicable terms.
 
 Changes to market-risk settings may take effect immediately where required to protect traders, Bungee, venues, or liquidity providers.
-
----
-
-> **Important:** This document is a product rulebook draft, not final legal terms. Before launch, it should be reconciled with Bungee’s actual execution infrastructure, risk engine, KYC/AML process, supported jurisdictions, venue relationships, and legal documentation.
