@@ -396,7 +396,7 @@ The cap applies before the 80% trader / 20% Bungee profit split and limits total
 
 Each processed payout counts toward the limit for 24 hours from its processing timestamp. During that time, you may request additional payouts up to your remaining allowance, subject to payout eligibility.
 
-If you withdraw the full $20,000 in one payout, you must wait 24 hours before another payout. If you withdraw it through multiple payouts, allowance becomes available progressively as each payout passes its 24-hour mark. The window does not reset at midnight.
+If you withdraw the full $20,000 in one payout, you must wait 24 hours before another payout. If you withdraw it through multiple payouts, allowance becomes available progressively as each payout passes its 24-hour mark.
 
 The cap applies independently to each funded account and is not a lifetime limit on claimable profits.
 
@@ -420,16 +420,16 @@ The reset occurs after every approved payout, including the first. A pending, re
 
 ### Worked Example
 
-A $10,000 Classic funded account grows to a realized balance of $40,000, including $30,000 of eligible profits. The trader requests the maximum gross payout of $20,000:
+A $10,000 Classic funded account grows to a realized balance of $35,000, including $25,000 of eligible profits. The trader requests the maximum gross payout of $20,000:
 
 - Gross payout deducted from eligible claimable profits: $20,000
 - Trader share at the standard 80% split: $16,000
-- Remaining gross eligible profits recorded separately and still claimable: $10,000
+- Remaining gross eligible profits recorded separately and still claimable: $5,000
 - Trading account balance after reset: $10,000
 - Restored Classic maximum drawdown floor: $10,000 × 94% = $9,400
 - Default maximum-drawdown buffer after reset: $600
 
-The remaining $10,000 of gross eligible profits may be requested after the 24-hour cooldown, subject to payout eligibility. They do not increase the reset account’s trading balance or drawdown allowance.
+The remaining $5,000 of gross eligible profits may be requested after the 24-hour cooldown, subject to payout eligibility. They do not increase the reset account’s trading balance or drawdown allowance.
 
 ## 26. Payout Timing
 
@@ -461,7 +461,7 @@ A trader must:
 - Have no unresolved hard breach
 - Have no unresolved abuse or risk investigation
 - Have no confirmed prohibited bot activity, HFT, or scalping for the applicable payout period
-- Have completed any applicable payout cooldown, with sufficient allowance available for the requested gross amount
+- Be under the account’s 24-hour payout cap, with enough remaining allowance for the requested gross amount
 - Meet any operational requirements shown in the Bungee dashboard
 
 KYC is intended to occur after passing the evaluation and before funded payouts.
