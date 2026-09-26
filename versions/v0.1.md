@@ -461,7 +461,7 @@ A trader must:
 - Have no unresolved hard breach
 - Have no unresolved abuse or risk investigation
 - Have no confirmed prohibited bot activity, HFT, or scalping for the applicable payout period
-- Have completed any applicable payout cooldown, with sufficient allowance available for the requested gross amount
+- Be under the account’s 24-hour payout cap, with enough remaining allowance for the requested gross amount
 - Meet any operational requirements shown in the Bungee dashboard
 
 KYC is intended to occur after passing the evaluation and before funded payouts.
