@@ -398,14 +398,12 @@ Each processed payout counts toward the limit for 24 hours from its processing t
 
 If you withdraw the full $20,000 in one payout, you must wait 24 hours before another payout. If you withdraw it through multiple payouts, allowance becomes available progressively as each payout passes its 24-hour mark. The window does not reset at midnight.
 
-For example, if you withdraw $12,000 gross at 10:00 UTC and $8,000 gross at 16:00 UTC, $12,000 of allowance becomes available at 10:00 UTC the next day, and another $8,000 at 16:00 UTC, assuming no further payouts are processed.
-
-The rolling limit applies independently to each funded account and is not a lifetime limit on claimable profits.
+The cap applies independently to each funded account and is not a lifetime limit on claimable profits.
 
 When an approved payout is processed:
 
 1. The gross approved payout amount is deducted from the account’s eligible claimable profits.
-2. Any remaining unpaid eligible profits are recorded separately in the Bungee account ledger and remain claimable in later eligible payout cycles, subject to the same rolling payout cap, profit split, and payout eligibility rules. The reset does not forfeit these profits.
+2. Any remaining unpaid eligible profits are recorded separately in the Bungee account ledger and remain claimable in later eligible payout cycles, subject to the same cap, profit split, cooldown, and payout eligibility rules. The reset does not forfeit these profits.
 3. The funded trading account resets to its default state: its original starting balance and default daily-loss and maximum-drawdown limits for the applicable account size and track are restored. Separately recorded claimable profits are excluded from the trading balance, trading equity, and risk-limit calculations.
 
 The static maximum drawdown floor after the reset is:
@@ -431,7 +429,7 @@ A $10,000 Classic funded account grows to a realized balance of $40,000, includi
 - Restored Classic maximum drawdown floor: $10,000 × 94% = $9,400
 - Default maximum-drawdown buffer after reset: $600
 
-The remaining $10,000 of gross eligible profits may be requested once the $20,000 payout passes its 24-hour mark and payout allowance becomes available again, subject to payout eligibility. They do not increase the reset account’s trading balance or drawdown allowance.
+The remaining $10,000 of gross eligible profits may be requested after the 24-hour cooldown, subject to payout eligibility. They do not increase the reset account’s trading balance or drawdown allowance.
 
 ## 26. Payout Timing
 
@@ -441,9 +439,9 @@ Bungee targets processing valid payout requests within:
 
 This is a target rather than an unconditional guarantee.
 
-Payout availability is governed by the rolling 24-hour allowance in Section 25. There is no mandatory wait after each payout while sufficient allowance remains. A payout’s processing timestamp is the time when its approved gross amount is deducted from eligible claimable profits and the account reset is recorded.
+The payout cooldown applies to each processed payout amount for 24 hours, as described in Section 25. Additional payouts may be requested during this period while sufficient allowance remains under the $20,000 cap. A payout’s processing timestamp is the time when its approved gross amount is deducted from eligible claimable profits and the account reset is recorded.
 
-A pending payout request must be resolved before another request can be submitted. Pending, rejected, or cancelled requests do not consume the rolling allowance. If a processed payout is reversed, its gross amount is removed from the rolling total.
+A pending payout request must be resolved before another request can be submitted. Pending, rejected, or cancelled requests do not consume payout allowance or start a cooldown. If a processed payout is reversed, its gross amount no longer counts toward the cap.
 
 A payout may take longer where:
 
@@ -463,7 +461,7 @@ A trader must:
 - Have no unresolved hard breach
 - Have no unresolved abuse or risk investigation
 - Have no confirmed prohibited bot activity, HFT, or scalping for the applicable payout period
-- Have sufficient remaining allowance under the rolling 24-hour payout cap for the requested gross amount
+- Have completed any applicable payout cooldown, with sufficient allowance available for the requested gross amount
 - Meet any operational requirements shown in the Bungee dashboard
 
 KYC is intended to occur after passing the evaluation and before funded payouts.
