@@ -2,7 +2,7 @@
 
 > **Version:** v0.1 — Working Draft\
 > **Status:** Product rulebook draft; subject to legal, compliance, risk, and operational review  
-> **Last updated:** September 25, 2026
+> **Last updated:** September 26, 2026
 
 ---
 
@@ -47,16 +47,11 @@ Bungee offers three one-step evaluation tracks.
 | Time limit | None | None | None |
 | Standard reward split | 80% | 80% | 80% |
 
-### Standard Pricing
+### Evaluation Pricing
 
-| Account Size | Classic | Pro | Turbo |
-| -----------: | ------: | --: | ----: |
-| $10,000 | $110 | $85 | $50 |
-| $25,000 | $275 | $200 | $120 |
-| $50,000 | $520 | $380 | $220 |
-| $100,000 | $1,000 | $750 | $400 |
+For current evaluation prices and available plans, visit the [Bungee evaluation page](https://app.bungee.exchange/funded-perps#pricing).
 
-> Pricing and plan availability may change. The live checkout page and Bungee dashboard are the source of truth.
+Pricing and plan availability may change. The live checkout page and Bungee dashboard are the source of truth.
 
 ## 4. Hard Breach Policy
 
@@ -284,40 +279,23 @@ Funding is included in account equity and therefore affects:
 
 The live Bungee dashboard is the source of truth for funding timestamps and charges applied to an account.
 
-## 15. Two-Minute Profit Eligibility and Scalping
+## 15. Bot Activity, High-Frequency Trading, and Scalping
 
-Bungee permits short-term trading, but discourages rapid scalping patterns that rely on repeatedly entering and exiting positions over very short periods.
+Bot activity, high-frequency trading (HFT), and scalping are prohibited on evaluation and funded accounts. Bungee monitors trading activity for these practices and will deny the applicable payout request when a prohibited pattern is confirmed.
 
-For profit from a position to be eligible, the relevant position quantity must remain open for at least:
+Prohibited activity includes:
 
-> **2 minutes (120 seconds)**
+- **Bot activity:** Using software, scripts, automated trading systems, or APIs to make trading decisions or automatically submit, modify, or cancel orders. Ordinary trader-configured stop-loss and take-profit orders are not, by themselves, bot activity.
+- **High-frequency trading (HFT):** Systematic high-speed order submission, modification, cancellation, or execution, including bursts of orders designed to exploit latency, stale prices, or differences in execution speed.
+- **Scalping:** Repeated or systematic rapid entries and exits intended to capture small price movements, spreads, or short-lived execution advantages. This applies whether trades are placed manually or through automation.
 
-If any position quantity is closed or reduced less than 120 seconds after it was opened:
+### Monitoring and Review
 
-- Any positive realized P&L attributable to that quantity will be removed from the account and excluded from profit-target, account-performance, and payout calculations.
-- Any negative realized P&L will remain on the account and continue to count toward all applicable loss and drawdown limits.
-- Trading fees, funding charges, and other applicable costs will remain payable and will not be reversed.
-- Closing the position early is permitted and does not, by itself, constitute an account breach.
+Bungee may review order and execution logs, trading frequency, order-to-trade and cancellation ratios, holding-time distributions, repeated trade sizes and timing, evidence of automation, and the share of activity or profits attributable to these patterns. Activity may be assessed across related accounts where relevant.
 
-This rule applies regardless of how the position is closed or reduced, including:
+There is no fixed minimum holding period or automatic profit removal based solely on how long a position is held. A single short-duration trade does not, by itself, establish scalping or HFT. Holding a position longer does not exempt a prohibited trading pattern from review.
 
-- Manual closes
-- Market, limit, and reduce-only orders
-- Partial closes or scaling out
-- Stop-loss and take-profit execution
-- Automated strategies, bots, or APIs
-
-Each increase in a position is treated as a separate opening quantity with its own two-minute timer. Position reductions are matched against opening quantities using first-in, first-out (FIFO) accounting. Reversing a position closes the existing quantity and opens any remaining quantity in the opposite direction with a new timer.
-
-A quantity closed exactly 120 seconds or more after its opening execution is eligible for profit.
-
-Closures initiated solely by Bungee for a technical incident, market delisting, or emergency administrative action are exempt. Liquidations and trader-configured stop-loss or take-profit executions are not exempt.
-
-### Scalping-Pattern Review
-
-Repeated or systematic opening and closing of positions within two minutes may constitute a prohibited scalping pattern. Bungee may consider the frequency of short-duration trades, their share of total trading activity or realized profit, trade-duration distribution, use of automation, and reliance on minor price movements or execution conditions.
-
-If Bungee determines that a scalping pattern occurred, the applicable payout request will be denied. This review is separate from the automatic removal of profit from individual short-duration trades; removal of that profit does not prevent the broader pattern from being reviewed. Bungee may also take additional enforcement action under Section 30 where the activity involves another prohibited practice.
+Payouts may be held while suspicious activity is investigated. If Bungee confirms prohibited bot activity, HFT, or scalping, the applicable payout request will be denied. Bungee may also restrict trading, suspend or breach the account, or take other enforcement action under Section 30.
 
 ## 16. Slippage and Market Execution
 
@@ -441,11 +419,11 @@ The minimum payout is:
 
 ## 25. Payout Cap and Post-Payout Account Reset
 
-Every funded account, regardless of account size or evaluation track, has the same maximum gross payout cap per request:
+Every funded account, regardless of account size or evaluation track, has a maximum gross payout cap per request per 24 hours:
 
 > **$20,000 USD**
 
-The cap applies to the gross payout request before the 80% trader / 20% Bungee profit split. It is a per-request cap for each account, not a lifetime limit on claimable profits.
+The cap applies before the 80% trader / 20% Bungee profit split. Each funded account may receive no more than $20,000 USD in gross approved payouts in any rolling 24-hour window, measured using payout-processing timestamps. The window does not reset at midnight UTC. Splitting a payout into multiple requests does not increase this limit, and the per-account cooldown in Section 26 still applies. This is not a lifetime limit on claimable profits.
 
 When an approved payout is processed:
 
@@ -511,7 +489,7 @@ A trader must:
 - Complete required KYC and compliance checks
 - Have no unresolved hard breach
 - Have no unresolved abuse or risk investigation
-- Have no detected prohibited scalping pattern for the applicable payout period
+- Have no confirmed prohibited bot activity, HFT, or scalping for the applicable payout period
 - Have completed the applicable 24-hour payout cooldown
 - Meet any operational requirements shown in the Bungee dashboard
 
@@ -530,7 +508,7 @@ Bungee may manually review payouts and trading activity, particularly where prof
 - Sudden liquidity events
 - Potentially manipulated markets
 - Suspicious trading patterns
-- Repeated or systematic short-duration scalping
+- Bot activity, high-frequency trading (HFT), or repeated or systematic scalping
 - Coordinated accounts
 - Activities that appear designed to exploit the program
 
@@ -635,65 +613,6 @@ Bungee may update:
 Material changes should be communicated through the Bungee platform or applicable terms.
 
 Changes to market-risk settings may take effect immediately where required to protect traders, Bungee, venues, or liquidity providers.
-
----
-
-# Part VIII — Items Still to Finalize
-
-The following remain open before final launch:
-
-1. Exact daily-loss baseline and equity-floor calculation at 00:00 UTC
-2. Whether maximum position notional is enforced per account or across all accounts belonging to a trader
-3. Maximum funding rate and the dynamic funding calculation methodology
-4. Exact treatment of open positions and equity limits while a payout request is pending
-5. Final restricted-jurisdiction, VPN, and minimum-age policies
-6. Final legal, compliance, refund, and KYC language
-7. Any scaling or account-growth program
-
----
-
-# Current Product Decisions at a Glance
-
-| Rule | Bungee v0.1 |
-| ---- | ----------- |
-| Evaluation | One-step |
-| Time limit | None |
-| Minimum trading days | None |
-| Consistency rule | None |
-| Breach model | Hard breach |
-| Profit target | Classic 10%; Pro 12%; Turbo 9% |
-| Drawdown | Classic 6%; Pro 5%; Turbo 3%; static |
-| Daily loss | 3%; equity-based, including unrealized P&L |
-| Daily reset | 00:00 UTC |
-| Supported markets | Bungee allowlist only |
-| Trading product | Isolated-margin perpetuals; no cross margin |
-| Initial market count | 21 |
-| More markets later | Yes, after risk review |
-| Leverage | Fixed per asset; not user-adjustable |
-| Maximum position notional | Per market; values listed in Section 8 |
-| Short-duration profit eligibility | Position quantity must remain open for at least 2 minutes; earlier profit is removed |
-| Detected scalping pattern | Applicable payout request denied |
-| Combined active allocation | $100K maximum nominal account size across all active accounts |
-| Cross-account hedging | Prohibited |
-| Public-content inspiration | Allowed |
-| Automated/coordinated copy trading | Prohibited |
-| Account sharing | Prohibited |
-| Latency / stale-price exploitation | Prohibited |
-| Execution model | Simulate, hedge, net, or externally execute at Bungee’s discretion |
-| Trading fees | Maker and taker matched at 1.5 bps (0.015%) per execution |
-| Funding | Dynamic, charged hourly, with a 0% minimum rate |
-| Standard payout split | 80/20 |
-| Minimum payout | $50 |
-| Gross payout cap | $20,000 USD per request for every account size and track, before the profit split |
-| Payout cooldown | 24 hours per account after an approved payout is processed and the reset is recorded |
-| Post-payout account reset | Original starting balance and default risk limits restored after every approved payout |
-| Unpaid eligible profits | Remain separately claimable after reset; excluded from trading balance, equity, and risk limits |
-| Payout asset | USDC ERC-20 initially |
-| Payout target | 1 business day |
-| KYC | After pass / before funded payout |
-| Manual payout review | Yes |
-| Emergency reduce-only / delisting | Yes |
-| Dashboard / internal ledger | Source of truth |
 
 ---
 
