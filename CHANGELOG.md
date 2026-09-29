@@ -2,6 +2,11 @@
 
 This file records material changes to the Bungee Funded Perp rulebook.
 
+## v0.2 - 2026-09-29
+
+- Calculated the 3% daily loss allowance and saved breach floor from settled balance at the UTC reset; enforce breaches when live risk equity reaches or falls below the floor, including at reset.
+- Defined settled balance, unrealized P&L, pending funding, and risk equity; clarified fee and funding treatment and added daily-loss examples.
+
 ## v0.1 - 2026-09-02
 
 - Established the one-step evaluation and hard-breach model.
