@@ -2,6 +2,10 @@
 
 This file records material changes to the Bungee Funded Perp rulebook.
 
+## v0.3 - 2026-09-30
+
+- Increased the maximum combined active allocation from $100,000 to $110,000 in nominal account size per trader.
+
 ## v0.2 - 2026-09-29
 
 - Calculated the 3% daily loss allowance and saved breach floor from settled balance at the UTC reset; enforce breaches when live risk equity reaches or falls below the floor, including at reset.
