@@ -4,8 +4,8 @@ This repository maintains the current Bungee Funded Perp rulebook and permanent 
 
 ## Current rulebook
 
-**Current version:** v0.3<br>
-**Last updated:** September 30, 2026
+**Current version:** v0.4<br>
+**Last updated:** October 3, 2026
 
 [Read the current rulebook](./RULEBOOK.md)
 
@@ -13,6 +13,7 @@ This repository maintains the current Bungee Funded Perp rulebook and permanent 
 
 | Version | Date | Snapshot | Changes |
 | ------- | ---- | -------- | ------- |
+| v0.4 | October 3, 2026 | [View v0.4](./versions/v0.4.md) | [Changelog](./CHANGELOG.md#v04---2026-10-03) |
 | v0.3 | September 30, 2026 | [View v0.3](./versions/v0.3.md) | [Changelog](./CHANGELOG.md#v03---2026-09-30) |
 | v0.2 | September 29, 2026 | [View v0.2](./versions/v0.2.md) | [Changelog](./CHANGELOG.md#v02---2026-09-29) |
 | v0.1 | September 2, 2026 | [View v0.1](./versions/v0.1.md) | [Changelog](./CHANGELOG.md#v01---2026-09-02) |
