@@ -171,10 +171,11 @@ Each supported asset has a fixed leverage amount set by Bungee.
 
 Leverage is not user-adjustable.
 
-Example:
+### Changes to Leverage
 
-- BTC trades on Bungee use 5x leverage.
-- A trader cannot manually select another leverage amount for BTC.
+When a market’s leverage changes, existing open positions in that market retain their original leverage and become **reduce-only** until fully closed. Traders may reduce or close these positions but cannot increase them.
+
+New positions opened after the change use the updated leverage. If an existing position is reduce-only, it must be fully closed before a new position is opened in that market. A leverage change does not itself force-close an existing position or convert it to the new leverage. Normal liquidation and account breach rules continue to apply.
 
 Bungee may change an asset’s fixed leverage prospectively based on market conditions, liquidity, volatility, venue limits, or risk considerations.
 
@@ -183,6 +184,10 @@ The current fixed leverage for each asset will be displayed in the Bungee dashbo
 ## 10. Maximum Position Notional
 
 Each supported market has a maximum permitted total open position notional, as shown on the Bungee assets page linked in Section 8.
+
+Position limits refer to total open position notional, not margin or account balance.
+
+An increase in a market’s position limit does not permit increasing an existing position designated reduce-only under Section 9. New positions remain subject to available margin and all account-level risk limits.
 
 Notional limits may vary by market based on:
 
