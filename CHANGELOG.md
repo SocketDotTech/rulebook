@@ -2,7 +2,7 @@
 
 This file records material changes to the Bungee Funded Perp rulebook.
 
-## Unreleased
+## v0.4 - 2026-10-03
 
 - Recorded the market update: new BTC positions at 10x and new SP500 and XYZ100 positions at 20x, with a $1,000,000 maximum position notional for each market. Current values are maintained on the assets page and dashboard rather than in the rulebook.
 - Made existing positions in the affected markets reduce-only at the change, retaining their original leverage until fully closed; new positions use the updated leverage.
