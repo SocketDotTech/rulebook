@@ -2,6 +2,11 @@
 
 This file records material changes to the Bungee Funded Perp rulebook.
 
+## Unreleased
+
+- Recorded the market update: new BTC positions at 10x and new SP500 and XYZ100 positions at 20x, with a $1,000,000 maximum position notional for each market. Current values are maintained on the assets page and dashboard rather than in the rulebook.
+- Made existing positions in the affected markets reduce-only at the change, retaining their original leverage until fully closed; new positions use the updated leverage.
+
 ## v0.2 - 2026-09-29
 
 - Calculated the 3% daily loss allowance and saved breach floor from settled balance at the UTC reset; enforce breaches when live risk equity reaches or falls below the floor, including at reset.
