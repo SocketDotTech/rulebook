@@ -2,6 +2,13 @@
 
 This file records material changes to the Bungee Funded Perp rulebook.
 
+## v0.5 - 2026-10-22 (draft)
+
+- Replace the per-account rolling payout cap with a shared per-user gross allowance per UTC calendar day, renewing at 00:00 UTC even after partial usage.
+- Count requests when accepted, including requests later rejected; cap edits change the current day's remaining headroom.
+- Align payout wording with the separate account-profit claim, account reset and user withdrawable balance lifecycle.
+
+
 ## v0.4 - 2026-10-03
 
 - Recorded the market update: new BTC positions at 10x and new SP500 and XYZ100 positions at 20x, with a $1,000,000 maximum position notional for each market. Current values are maintained on the assets page and dashboard rather than in the rulebook.
