@@ -428,23 +428,23 @@ The minimum payout is:
 
 ## 25. Payout Cap and Post-Payout Account Reset
 
-Every funded account, regardless of account size or evaluation track, has a maximum gross payout cap per request per 24 hours:
+Each user has one daily gross payout allowance, shared across their real funded accounts. The default allowance is:
 
-> **$20,000 USD**
+> **$20,000 USD per UTC calendar day, before the trader profit split**
 
-The cap applies before the 80% trader / 20% Bungee profit split and limits total gross payouts from each account to $20,000 in any rolling 24-hour period, including payouts split across multiple requests.
+The allowance counts payout requests accepted between 00:00 UTC and the next 00:00 UTC. It renews at 00:00 UTC every day, whether used fully or partially. Unused allowance does not carry forward, and requests accepted on earlier days do not reduce today's allowance.
 
-Each processed payout counts toward the limit for 24 hours from its processing timestamp. During that time, you may request additional payouts up to your remaining allowance, subject to payout eligibility.
+Accepted requests consume allowance immediately, including requests later paid or rejected. Partial requests leave the rest available immediately. Payment processing does not start a separate cooldown. Two daily allowances can be requested on opposite sides of midnight, subject to all other eligibility checks.
 
-If you withdraw the full $20,000 in one payout, you must wait 24 hours before another payout. If you withdraw it through multiple payouts, allowance becomes available progressively as each payout passes its 24-hour mark.
+The dashboard shows the current allowance, which Bungee may change. A cap increase adds available allowance for that UTC day. A decrease below gross already accepted leaves no remaining allowance until the next UTC day; accepted requests remain unchanged.
 
-The cap applies independently to each funded account and is not a lifetime limit on claimable profits.
+### Claiming profit and resetting the account
 
-When an approved payout is processed:
+Claiming account profit and requesting an external payment are separate steps:
 
-1. The gross approved payout amount is deducted from the account’s eligible claimable profits.
-2. Any remaining unpaid eligible profits are recorded separately in the Bungee account ledger and remain claimable in later eligible payout cycles, subject to the same cap, profit split, cooldown, and payout eligibility rules. The reset does not forfeit these profits.
-3. The funded trading account resets to its default state: its original starting balance and default daily-loss and maximum-drawdown limits for the applicable account size and track are restored. Separately recorded claimable profits are excluded from the trading balance, trading equity, and risk-limit calculations.
+1. Claiming eligible settled profit removes all eligible profit above the original balance, applies the account's saved profit split and credits the trader share to the user's withdrawable payout balance.
+2. The trading account resets to its original starting balance and default daily-loss and maximum-drawdown limits. The separately credited payout balance does not increase trading balance, equity or risk limits.
+3. External payout requests consume the credited balance within the remaining daily gross allowance. Any excess stays withdrawable for a later UTC day. Claims can continue accumulating eligible profits when the daily payment allowance is exhausted.
 
 The static maximum drawdown floor after the reset is:
 
@@ -456,20 +456,18 @@ The applicable percentages remain:
 - Pro: 5%
 - Turbo: 3%
 
-The reset occurs after every approved payout, including the first. A pending, rejected, cancelled, or reversed payout request does not trigger a reset. The account remains funded; the payout reset does not require a new evaluation or clear an unresolved breach or investigation.
+The account resets when profit is claimed, independently of when a payment is approved or sent. It remains funded and does not require a new evaluation. A claim does not clear an unresolved breach or investigation. A rejected external request is final and restores neither the requested balance nor the daily allowance it consumed.
 
 ### Worked Example
 
-A $10,000 Classic funded account grows to a realized balance of $35,000, including $25,000 of eligible profits. The trader requests the maximum gross payout of $20,000:
+A $10,000 Classic funded account reaches a settled balance of $35,000, including $25,000 of eligible gross profit. Claiming that profit:
 
-- Gross payout deducted from eligible claimable profits: $20,000
-- Trader share at the standard 80% split: $16,000
-- Remaining gross eligible profits recorded separately and still claimable: $5,000
-- Trading account balance after reset: $10,000
-- Restored Classic maximum drawdown floor: $10,000 × 94% = $9,400
-- Default maximum-drawdown buffer after reset: $600
+- Credits $20,000 to the user's payout balance at the standard 80% split.
+- Resets the trading balance to $10,000.
+- Restores the Classic maximum drawdown floor to $9,400, giving a $600 maximum-drawdown buffer.
+- Restores the default 3% daily-loss floor to $9,700, giving $300 of room before a daily-loss breach at $10,000 equity.
 
-The remaining $5,000 of gross eligible profits may be requested after the 24-hour cooldown, subject to payout eligibility. They do not increase the reset account’s trading balance or drawdown allowance.
+With a fresh $20,000 gross daily allowance, the user can request $16,000 USDC. The remaining $4,000 trader share, representing $5,000 gross profit, stays in the payout balance and can be requested from 00:00 UTC the next day, subject to eligibility. It does not increase the reset account's trading balance or risk allowance.
 
 ## 26. Payout Timing
 
@@ -479,10 +477,9 @@ Bungee targets processing valid payout requests within:
 
 This is a target rather than an unconditional guarantee.
 
-The payout cooldown applies to each processed payout amount for 24 hours, as described in Section 25. Additional payouts may be requested during this period while sufficient allowance remains under the $20,000 cap. A payout’s processing timestamp is the time when its approved gross amount is deducted from eligible claimable profits and the account reset is recorded.
+Allowance is consumed when a request is accepted, rather than when its payment is approved or sent. Every request belongs to its UTC acceptance day as described in Section 25; payment or rejection on a later day does not consume that later day's allowance again.
 
-A pending payout request must be resolved before another request can be submitted. Pending, rejected, or cancelled requests do not consume payout allowance or start a cooldown. If a processed payout is reversed, its gross amount no longer counts toward the cap.
-
+Multiple requests may be pending while sufficient daily allowance and withdrawable balance remain. Rejected requests still count on their acceptance day and do not restore their requested balance.
 A payout may take longer where:
 
 - KYC is incomplete
@@ -501,7 +498,7 @@ A trader must:
 - Have no unresolved hard breach
 - Have no unresolved abuse or risk investigation
 - Have no confirmed prohibited bot activity, HFT, or scalping for the applicable payout period
-- Be under the account’s 24-hour payout cap, with enough remaining allowance for the requested gross amount
+- Have enough remaining user-wide UTC daily allowance for the gross amount requested
 - Meet any operational requirements shown in the Bungee dashboard
 
 KYC is intended to occur after passing the evaluation and before funded payouts.
