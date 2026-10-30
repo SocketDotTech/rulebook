@@ -371,18 +371,40 @@ The following are prohibited unless expressly approved by Bungee:
 - Sharing account credentials
 - Allowing another person to operate an account
 
-## 20. Cross-Account Hedging
+Sharing signals, strategies, entry or exit timing, or trading infrastructure to coordinate prohibited hedging under Section 20 is also prohibited. Ordinary independent use of public trading content remains permitted under Section 18.
 
-Cross-account hedging is prohibited.
+## 20. Hedging Across Accounts, Traders, and Platforms
 
-Examples include:
+### Cross-Account Hedging
 
-- Long BTC in one Bungee account while short BTC in another
-- Using correlated assets to manufacture substantially offsetting exposure
-- Coordinating opposite positions with another trader
-- Intentionally creating one losing account and one winning account to manufacture payout asymmetry
+Cross-account hedging is prohibited. This includes opposing positions in the same instrument, or in sufficiently correlated instruments that produce an economic hedge, across two or more evaluation accounts, funded accounts, or any combination of them. The rule applies whether the accounts use the same or different names, email addresses, identities, or beneficial owners.
 
-Bungee may assess the economic substance of the trading pattern rather than only the exact symbol traded.
+Prohibited hedging may be identified where any of the following applies:
+
+- Positions are opened at the same or substantially the same time.
+- Entry prices, position notionals, or price ranges cause the positions to substantially offset one another.
+- The combined net exposure shows a deliberate hedge, even where entry times, prices, or position sizes differ.
+- The overall trading pattern is designed to profit from a winning account while offsetting losses in another or to exploit evaluation requirements or the profit split.
+
+Bungee assesses the economic substance of the arrangement, considering market conditions, volatility, historical and implied correlation, position sizing, and trading patterns. Different symbols or staggered entries do not exempt an economic hedge.
+
+### Cross-Trader Hedging
+
+Two or more traders must not coordinate opposing positions in the same or sufficiently correlated instruments to engineer guaranteed or near-guaranteed aggregate profit or exploit the evaluation or payout structure. Coordination includes sharing signals, strategies, timing parameters, or trading infrastructure for that purpose. The restriction applies regardless of whether the traders share an identity, device, network, or financial interest. Coordination may be established from the overall trading pattern without an express agreement between the traders.
+
+### External Accounts and Platforms
+
+Traders must not arbitrage a Bungee account against an account at another exchange, broker, prop firm, or trading platform, including an account accessed through a wallet, or use such an account to offset Bungee exposure in an arrangement that exploits evaluation requirements, risk limits, or the payout structure. This applies whether the external account is controlled by the trader or by a person acting in coordination with the trader.
+
+### Hedging Within One Account
+
+Where supported by the Bungee platform, a trader may hold opposing positions in the same instrument within one account only if the existing position has already reached substantial unrealized profit or loss when the opposing position is opened, and Bungee determines that the opposing position functions as an independent trade rather than a mechanism to capture gains while offsetting losses or exploit the program. Bungee determines whether the existing unrealized profit or loss is sufficient, taking account of the position and market circumstances. Hedging that does not meet these conditions is prohibited. This permission does not enable an order type or position mode that the platform does not support.
+
+### Review and Consequences
+
+Bungee may review trading activity across associated accounts and traders to determine whether prohibited hedging occurred. A confirmed violation constitutes a breach and may result in immediate termination of all associated Bungee accounts, denial of payouts, forfeiture of accrued rewards attributable to the prohibited arrangement, and permanent disqualification from the program.
+
+For an isolated, inadvertent first violation, Bungee may issue a formal warning instead of termination. A repeated violation, or one determined to be deliberate or coordinated, will result in termination of associated Bungee accounts, forfeiture of affected accrued rewards, and disqualification. These measures apply alongside Section 30.
 
 ## 21. Technical and Market Abuse
 

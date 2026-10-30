@@ -2,6 +2,13 @@
 
 This file records material changes to the Bungee Funded Perp rulebook.
 
+## v0.6 - 2026-10-30 (draft)
+
+- Expanded hedging restrictions across evaluation and funded accounts, different identities, coordinated traders, and external platforms used to exploit the program.
+- Defined economic-offset criteria and review factors, including timing, price, notional, correlation, and combined exposure.
+- Added conditional permission for same-account hedging where supported by the platform, subject to substantial existing unrealized profit or loss and Bungee review.
+- Defined hedging-specific breach, payout, forfeiture, and disqualification consequences, with a discretionary warning for an isolated, inadvertent first violation.
+
 ## v0.5 - 2026-10-22 (draft)
 
 - Replace the per-account rolling payout cap with a shared per-user gross allowance per UTC calendar day, renewing at 00:00 UTC even after partial usage.
