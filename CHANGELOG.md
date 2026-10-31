@@ -2,6 +2,11 @@
 
 This file records material changes to the Bungee Funded Perp rulebook.
 
+## v0.7 - 2026-10-31 (draft)
+
+- Split aggregate account allocation into independent per-trader caps: $300,000 in active challenge/evaluation nominal account size and $110,000 in active funded nominal account size.
+- Clarified how the caps are counted and added examples, including holding both stage allocations simultaneously.
+
 ## v0.6 - 2026-10-30 (draft)
 
 - Expanded hedging restrictions across evaluation and funded accounts, different identities, coordinated traders, and external platforms used to exploit the program.

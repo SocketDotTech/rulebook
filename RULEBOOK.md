@@ -204,11 +204,14 @@ Bungee may reduce notional limits, place a market into reduce-only mode, or disa
 
 ## 11. Aggregate Account Allocation
 
-A trader may hold multiple active Bungee Funded Perp accounts, subject to a current maximum combined allocation of:
+A trader may hold multiple active Bungee Funded Perp accounts, subject to two separate combined allocation caps per trader:
 
-> **$110,000 total active account size**
+| Account Stage | Maximum Combined Active Nominal Account Size |
+| --- | ---: |
+| Challenges / evaluations | $300,000 |
+| Funded accounts | $110,000 |
 
-This refers to the combined nominal size of the trader’s active Bungee Funded Perp accounts.
+Each cap is calculated independently by adding the nominal starting sizes of all active accounts in that stage belonging to the trader. Challenge accounts count toward the challenge cap; funded accounts count toward the funded cap. These are separate stage-specific caps, not a single combined cap across both stages.
 
 It is not:
 
@@ -216,11 +219,11 @@ It is not:
 - Position notional
 - Per-trade exposure
 
-Example:
+Examples:
 
-- One $100,000 account plus one $10,000 account = $110,000 combined allocation
-- Two $50,000 accounts plus one $10,000 account = $110,000 combined allocation
-- Four $25,000 accounts plus one $10,000 account = $110,000 combined allocation
+- Three active $100,000 challenge accounts = $300,000 challenge allocation.
+- One active $100,000 funded account plus one active $10,000 funded account = $110,000 funded allocation.
+- A trader may hold both of these allocations simultaneously, provided each stage remains within its own cap.
 
 Each account remains subject to its own risk limits and position restrictions.
 
