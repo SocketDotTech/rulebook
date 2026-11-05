@@ -400,38 +400,54 @@ The following are prohibited unless expressly approved by Bungee:
 - Sharing account credentials
 - Allowing another person to operate an account
 
-Sharing signals, strategies, entry or exit timing, or trading infrastructure to coordinate prohibited hedging under Section 20 is also prohibited. Ordinary independent use of public trading content remains permitted under Section 18.
+Sharing signals, strategies, entry or exit timing, or trading infrastructure to coordinate prohibited opposite exposure under Section 20 is also prohibited. Ordinary independent use of public trading content remains permitted under Section 18.
 
-## 20. Hedging Across Accounts, Traders, and Platforms
+## 20. Opposite Exposure Across Accounts, Traders, and Platforms
 
-### Cross-Account Hedging
+Holding opposite exposure across accounts, between traders, or against an external platform is not allowed. This is often called hedging; this section applies whatever the arrangement is called.
 
-Cross-account hedging is prohibited. This includes opposing positions in the same instrument, or in sufficiently correlated instruments that produce an economic hedge, across two or more evaluation accounts, funded accounts, or any combination of them. The rule applies whether the accounts use the same or different names, email addresses, identities, or beneficial owners.
+### What Counts as Opposite Exposure
 
-Prohibited hedging may be identified where any of the following applies:
+Opposite exposure means a long position on one side and a short position on the other, so that one side is positioned to gain while the other loses. It includes:
 
+- Long and short positions in the same market
+- Long and short positions in different markets, for example long BTC in one account and short ETH in another
+- Positions of different sizes, where one side only partly offsets the other
+- Positions opened at different times that are later held together
+
+Bungee does not publish a correlation level, size ratio, time gap, or overlap duration below which opposite exposure is acceptable. Different markets, unequal sizes, staggered entries, or short overlaps do not take an arrangement outside this section.
+
+### Opposite Exposure Across Accounts
+
+Opposite exposure across two or more evaluation accounts, funded accounts, or any combination of them is prohibited. The rule applies whether the accounts use the same or different names, email addresses, identities, or beneficial owners.
+
+Prohibited opposite exposure may be identified where any of the following applies:
+
+- Positions on opposite sides are held at the same time, in the same market or in different markets.
 - Positions are opened at the same or substantially the same time.
-- Entry prices, position notionals, or price ranges cause the positions to substantially offset one another.
-- The combined net exposure shows a deliberate hedge, even where entry times, prices, or position sizes differ.
-- The overall trading pattern is designed to profit from a winning account while offsetting losses in another or to exploit evaluation requirements or the profit split.
+- Entry prices, position notionals, or price ranges cause the positions to offset one another in whole or in part.
+- The combined net exposure is reduced by positions in another account, even where entry times, prices, markets, or position sizes differ.
+- The overall trading pattern lets one account profit while another absorbs the loss, or exploits evaluation requirements or the profit split.
 
-Bungee assesses the economic substance of the arrangement, considering market conditions, volatility, historical and implied correlation, position sizing, and trading patterns. Different symbols or staggered entries do not exempt an economic hedge.
+Bungee assesses the overall exposure and trading pattern, considering market conditions, volatility, how the markets involved move relative to one another, position sizing, and timing.
 
-### Cross-Trader Hedging
+### Opposite Exposure Between Traders
 
-Two or more traders must not coordinate opposing positions in the same or sufficiently correlated instruments to engineer guaranteed or near-guaranteed aggregate profit or exploit the evaluation or payout structure. Coordination includes sharing signals, strategies, timing parameters, or trading infrastructure for that purpose. The restriction applies regardless of whether the traders share an identity, device, network, or financial interest. Coordination may be established from the overall trading pattern without an express agreement between the traders.
+Two or more traders must not hold or coordinate opposite exposure, in the same market or in different markets, in a way that lets one account profit while another absorbs the loss or that otherwise exploits the evaluation or payout structure. Coordination includes sharing signals, strategies, timing parameters, or trading infrastructure for that purpose. The restriction applies regardless of whether the traders share an identity, device, network, or financial interest. Coordination may be established from the overall trading pattern without an express agreement between the traders.
 
 ### External Accounts and Platforms
 
-Traders must not arbitrage a Bungee account against an account at another exchange, broker, prop firm, or trading platform, including an account accessed through a wallet, or use such an account to offset Bungee exposure in an arrangement that exploits evaluation requirements, risk limits, or the payout structure. This applies whether the external account is controlled by the trader or by a person acting in coordination with the trader.
+Traders must not hold opposite exposure between a Bungee account and an account at another exchange, broker, prop firm, or trading platform, including an account accessed through a wallet, or otherwise arbitrage a Bungee account against such an account, in an arrangement that exploits evaluation requirements, risk limits, or the payout structure. This applies in the same market or in different markets, and whether the external account is controlled by the trader or by a person acting in coordination with the trader.
 
-### Hedging Within One Account
+### Opposite Positions Within One Account
 
-Where supported by the Bungee platform, a trader may hold opposing positions in the same instrument within one account only if the existing position has already reached substantial unrealized profit or loss when the opposing position is opened, and Bungee determines that the opposing position functions as an independent trade rather than a mechanism to capture gains while offsetting losses or exploit the program. Bungee determines whether the existing unrealized profit or loss is sufficient, taking account of the position and market circumstances. Hedging that does not meet these conditions is prohibited. This permission does not enable an order type or position mode that the platform does not support.
+Where supported by the Bungee platform, a trader may hold opposing positions in the same instrument within one account only if the existing position has already reached substantial unrealized profit or loss when the opposing position is opened, and Bungee determines that the opposing position functions as an independent trade rather than a mechanism to capture gains while offsetting losses or exploit the program. Bungee determines whether the existing unrealized profit or loss is sufficient, taking account of the position and market circumstances. Opposing positions in the same instrument that do not meet these conditions are prohibited. This permission does not enable an order type or position mode that the platform does not support.
+
+Long and short positions in different markets held within a single account are part of that account's own risk and are not, by themselves, opposite exposure under this section.
 
 ### Review and Consequences
 
-Bungee may review trading activity across associated accounts and traders to determine whether prohibited hedging occurred. A confirmed violation constitutes a breach and may result in immediate termination of all associated Bungee accounts, denial of payouts, forfeiture of accrued rewards attributable to the prohibited arrangement, and permanent disqualification from the program.
+Bungee may review trading activity across associated accounts and traders to determine whether prohibited opposite exposure occurred. A confirmed violation constitutes a breach and may result in immediate termination of all associated Bungee accounts, denial of payouts, forfeiture of accrued rewards attributable to the prohibited arrangement, and permanent disqualification from the program.
 
 For an isolated, inadvertent first violation, Bungee may issue a formal warning instead of termination. A repeated violation, or one determined to be deliberate or coordinated, will result in termination of associated Bungee accounts, forfeiture of affected accrued rewards, and disqualification. These measures apply alongside Section 30.
 

@@ -8,6 +8,9 @@ This file records material changes to the Bungee Funded Perp rulebook.
 - Added a "What Counts as Scalping" subsection: scalping is judged on the trading pattern with no published holding time, trade count, or profit share; listed examples; a small number of rapid trades in one session can be a pattern; one isolated short trade remains ordinary trading.
 - Replaced the statement that there is no fixed minimum holding period or automatic profit removal with a provision that Bungee may apply platform controls to rapid trades, including a minimum holding time below which realized profit is not credited; clearing such a control does not exempt a trade.
 - Added a "Consequences" subsection: a denied payout request is final, profit attributable to the prohibited activity may be removed, and no prior warning is required.
+- Renamed Section 20 from hedging to opposite exposure and defined it: a long against a short across accounts, between traders, or against an external platform, in the same market or in different markets (for example long BTC in one account and short ETH in another), including partial offsets and positions opened at different times.
+- Removed the "sufficiently correlated", "economic hedge", and "guaranteed or near-guaranteed aggregate profit" qualifiers; Bungee does not publish a correlation level, size ratio, time gap, or overlap duration below which opposite exposure is acceptable.
+- Clarified that long and short positions in different markets within a single account are part of that account's own risk and are not, by themselves, opposite exposure.
 
 ## v0.7 - 2026-10-31 (draft)
 
