@@ -2,6 +2,13 @@
 
 This file records material changes to the Bungee Funded Perp rulebook.
 
+## v0.8 - 2026-11-05 (draft)
+
+- Stated plainly that bot activity, high-frequency trading (HFT), and scalping are not allowed on evaluation or funded accounts and that profit made through them is not eligible for payout.
+- Added a "What Counts as Scalping" subsection: scalping is judged on the trading pattern with no published holding time, trade count, or profit share; listed examples; a small number of rapid trades in one session can be a pattern; one isolated short trade remains ordinary trading.
+- Replaced the statement that there is no fixed minimum holding period or automatic profit removal with a provision that Bungee may apply platform controls to rapid trades, including a minimum holding time below which realized profit is not credited; clearing such a control does not exempt a trade.
+- Added a "Consequences" subsection: a denied payout request is final, profit attributable to the prohibited activity may be removed, and no prior warning is required.
+
 ## v0.7 - 2026-10-31 (draft)
 
 - Split aggregate account allocation into independent per-trader caps: $300,000 in active challenge/evaluation nominal account size and $110,000 in active funded nominal account size.

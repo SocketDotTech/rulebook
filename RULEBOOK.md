@@ -293,21 +293,47 @@ The live Bungee dashboard is the source of truth for funding timestamps and char
 
 ## 15. Bot Activity, High-Frequency Trading, and Scalping
 
-Bot activity, high-frequency trading (HFT), and scalping are prohibited on evaluation and funded accounts. Bungee monitors trading activity for these practices and will deny the applicable payout request when a prohibited pattern is confirmed.
+Bot activity, high-frequency trading (HFT), and scalping are not allowed on evaluation or funded accounts. Profit made through any of them is not eligible for payout. Bungee monitors trading activity for these practices and will deny the applicable payout request when prohibited activity is confirmed.
 
 Prohibited activity includes:
 
 - **Bot activity:** Using software, scripts, automated trading systems, or APIs to make trading decisions or automatically submit, modify, or cancel orders. Ordinary trader-configured stop-loss and take-profit orders are not, by themselves, bot activity.
 - **High-frequency trading (HFT):** Systematic high-speed order submission, modification, cancellation, or execution, including bursts of orders designed to exploit latency, stale prices, or differences in execution speed.
-- **Scalping:** Repeated or systematic rapid entries and exits intended to capture small price movements, spreads, or short-lived execution advantages. This applies whether trades are placed manually or through automation.
+- **Scalping:** Repeated or systematic rapid entries and exits intended to capture small price movements, spreads, or short-lived execution advantages. This applies whether trades are placed manually or through automation, and whether positions are opened and closed with market, limit, stop-loss, or take-profit orders.
+
+### What Counts as Scalping
+
+Scalping is judged on the trading pattern, not against a fixed number. Bungee does not publish a holding time, trade count, or profit share below which rapid trading is acceptable. Holding positions slightly longer, splitting a trade into several orders, or spreading rapid trades across markets, sessions, or accounts does not take the activity outside this section.
+
+Examples of activity Bungee treats as scalping include:
+
+- Opening and closing several positions within seconds or a few minutes of entry, in one session or across a payout period
+- Trading rapidly in and out around a sharp price move, news release, or liquidation event
+- Repeatedly entering at large size relative to the account and exiting on a small price move
+- A payout period in which a substantial share of the profit comes from rapid trades
+- Rapid trades repeated across accounts of the same trader or of related traders
+
+A pattern does not need to be long-running. A small number of rapid trades in one session can be enough, and the rapid trades do not need to be the trader's only activity.
+
+A single short-duration trade does not, by itself, establish scalping or HFT. Closing one position quickly because the trade idea failed, or because a stop-loss or take-profit set at entry was reached, is ordinary trading.
 
 ### Monitoring and Review
 
 Bungee may review order and execution logs, trading frequency, order-to-trade and cancellation ratios, holding-time distributions, repeated trade sizes and timing, evidence of automation, and the share of activity or profits attributable to these patterns. Activity may be assessed across related accounts where relevant.
 
-There is no fixed minimum holding period or automatic profit removal based solely on how long a position is held. A single short-duration trade does not, by itself, establish scalping or HFT. Holding a position longer does not exempt a prohibited trading pattern from review.
+Bungee may also apply platform controls to rapid trades, including a minimum holding time below which profit realized on a position is not credited to the account. Any such control is a floor, not a safe harbor: a trade that clears it remains subject to this section.
 
-Payouts may be held while suspicious activity is investigated. If Bungee confirms prohibited bot activity, HFT, or scalping, the applicable payout request will be denied. Bungee may also restrict trading, suspend or breach the account, or take other enforcement action under Section 30.
+Payouts may be held while suspicious activity is investigated.
+
+### Consequences
+
+If Bungee confirms prohibited bot activity, HFT, or scalping:
+
+- The applicable payout request will be denied. A denied request is final, as described in Section 25.
+- Profit attributable to the prohibited activity may be removed from the account.
+- Bungee may restrict trading, suspend or breach the account, or take other enforcement action under Section 30.
+
+Bungee is not required to issue a warning before denying a payout under this section.
 
 ## 16. Slippage and Market Execution
 
