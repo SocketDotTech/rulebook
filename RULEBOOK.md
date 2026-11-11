@@ -293,21 +293,47 @@ The live Bungee dashboard is the source of truth for funding timestamps and char
 
 ## 15. Bot Activity, High-Frequency Trading, and Scalping
 
-Bot activity, high-frequency trading (HFT), and scalping are prohibited on evaluation and funded accounts. Bungee monitors trading activity for these practices and will deny the applicable payout request when a prohibited pattern is confirmed.
+Bot activity, high-frequency trading (HFT), and scalping are not allowed on evaluation or funded accounts. Profit made through any of them is not eligible for payout. Bungee monitors trading activity for these practices and will deny the applicable payout request when prohibited activity is confirmed.
 
 Prohibited activity includes:
 
 - **Bot activity:** Using software, scripts, automated trading systems, or APIs to make trading decisions or automatically submit, modify, or cancel orders. Ordinary trader-configured stop-loss and take-profit orders are not, by themselves, bot activity.
 - **High-frequency trading (HFT):** Systematic high-speed order submission, modification, cancellation, or execution, including bursts of orders designed to exploit latency, stale prices, or differences in execution speed.
-- **Scalping:** Repeated or systematic rapid entries and exits intended to capture small price movements, spreads, or short-lived execution advantages. This applies whether trades are placed manually or through automation.
+- **Scalping:** Repeated or systematic rapid entries and exits intended to capture small price movements, spreads, or short-lived execution advantages. This applies whether trades are placed manually or through automation, and whether positions are opened and closed with market, limit, stop-loss, or take-profit orders.
+
+### What Counts as Scalping
+
+Scalping is judged on the trading pattern, not against a fixed number. Bungee does not publish a holding time, trade count, or profit share below which rapid trading is acceptable. Holding positions slightly longer, splitting a trade into several orders, or spreading rapid trades across markets, sessions, or accounts does not take the activity outside this section.
+
+Examples of activity Bungee treats as scalping include:
+
+- Opening and closing several positions within seconds or a few minutes of entry, in one session or across a payout period
+- Trading rapidly in and out around a sharp price move, news release, or liquidation event
+- Repeatedly entering at large size relative to the account and exiting on a small price move
+- A payout period in which a substantial share of the profit comes from rapid trades
+- Rapid trades repeated across accounts of the same trader or of related traders
+
+A pattern does not need to be long-running. A small number of rapid trades in one session can be enough, and the rapid trades do not need to be the trader's only activity.
+
+A single short-duration trade does not, by itself, establish scalping or HFT. Closing one position quickly because the trade idea failed, or because a stop-loss or take-profit set at entry was reached, is ordinary trading.
 
 ### Monitoring and Review
 
 Bungee may review order and execution logs, trading frequency, order-to-trade and cancellation ratios, holding-time distributions, repeated trade sizes and timing, evidence of automation, and the share of activity or profits attributable to these patterns. Activity may be assessed across related accounts where relevant.
 
-There is no fixed minimum holding period or automatic profit removal based solely on how long a position is held. A single short-duration trade does not, by itself, establish scalping or HFT. Holding a position longer does not exempt a prohibited trading pattern from review.
+Bungee may also apply platform controls to rapid trades, including a minimum holding time below which profit realized on a position is not credited to the account. Any such control is a floor, not a safe harbor: a trade that clears it remains subject to this section.
 
-Payouts may be held while suspicious activity is investigated. If Bungee confirms prohibited bot activity, HFT, or scalping, the applicable payout request will be denied. Bungee may also restrict trading, suspend or breach the account, or take other enforcement action under Section 30.
+Payouts may be held while suspicious activity is investigated.
+
+### Consequences
+
+If Bungee confirms prohibited bot activity, HFT, or scalping:
+
+- The applicable payout request will be denied. A denied request is final, as described in Section 25.
+- Profit attributable to the prohibited activity may be removed from the account.
+- Bungee may restrict trading, suspend or breach the account, or take other enforcement action under Section 30.
+
+Bungee is not required to issue a warning before denying a payout under this section.
 
 ## 16. Slippage and Market Execution
 
@@ -374,38 +400,54 @@ The following are prohibited unless expressly approved by Bungee:
 - Sharing account credentials
 - Allowing another person to operate an account
 
-Sharing signals, strategies, entry or exit timing, or trading infrastructure to coordinate prohibited hedging under Section 20 is also prohibited. Ordinary independent use of public trading content remains permitted under Section 18.
+Sharing signals, strategies, entry or exit timing, or trading infrastructure to coordinate prohibited opposite exposure under Section 20 is also prohibited. Ordinary independent use of public trading content remains permitted under Section 18.
 
-## 20. Hedging Across Accounts, Traders, and Platforms
+## 20. Opposite Exposure Across Accounts, Traders, and Platforms
 
-### Cross-Account Hedging
+Holding opposite exposure across accounts, between traders, or against an external platform is not allowed. This is often called hedging; this section applies whatever the arrangement is called.
 
-Cross-account hedging is prohibited. This includes opposing positions in the same instrument, or in sufficiently correlated instruments that produce an economic hedge, across two or more evaluation accounts, funded accounts, or any combination of them. The rule applies whether the accounts use the same or different names, email addresses, identities, or beneficial owners.
+### What Counts as Opposite Exposure
 
-Prohibited hedging may be identified where any of the following applies:
+Opposite exposure means a long position on one side and a short position on the other, so that one side is positioned to gain while the other loses. It includes:
 
+- Long and short positions in the same market
+- Long and short positions in different markets, for example long BTC in one account and short ETH in another
+- Positions of different sizes, where one side only partly offsets the other
+- Positions opened at different times that are later held together
+
+Bungee does not publish a correlation level, size ratio, time gap, or overlap duration below which opposite exposure is acceptable. Different markets, unequal sizes, staggered entries, or short overlaps do not take an arrangement outside this section.
+
+### Opposite Exposure Across Accounts
+
+Opposite exposure across two or more evaluation accounts, funded accounts, or any combination of them is prohibited. The rule applies whether the accounts use the same or different names, email addresses, identities, or beneficial owners.
+
+Prohibited opposite exposure may be identified where any of the following applies:
+
+- Positions on opposite sides are held at the same time, in the same market or in different markets.
 - Positions are opened at the same or substantially the same time.
-- Entry prices, position notionals, or price ranges cause the positions to substantially offset one another.
-- The combined net exposure shows a deliberate hedge, even where entry times, prices, or position sizes differ.
-- The overall trading pattern is designed to profit from a winning account while offsetting losses in another or to exploit evaluation requirements or the profit split.
+- Entry prices, position notionals, or price ranges cause the positions to offset one another in whole or in part.
+- The combined net exposure is reduced by positions in another account, even where entry times, prices, markets, or position sizes differ.
+- The overall trading pattern lets one account profit while another absorbs the loss, or exploits evaluation requirements or the profit split.
 
-Bungee assesses the economic substance of the arrangement, considering market conditions, volatility, historical and implied correlation, position sizing, and trading patterns. Different symbols or staggered entries do not exempt an economic hedge.
+Bungee assesses the overall exposure and trading pattern, considering market conditions, volatility, how the markets involved move relative to one another, position sizing, and timing.
 
-### Cross-Trader Hedging
+### Opposite Exposure Between Traders
 
-Two or more traders must not coordinate opposing positions in the same or sufficiently correlated instruments to engineer guaranteed or near-guaranteed aggregate profit or exploit the evaluation or payout structure. Coordination includes sharing signals, strategies, timing parameters, or trading infrastructure for that purpose. The restriction applies regardless of whether the traders share an identity, device, network, or financial interest. Coordination may be established from the overall trading pattern without an express agreement between the traders.
+Two or more traders must not hold or coordinate opposite exposure, in the same market or in different markets, in a way that lets one account profit while another absorbs the loss or that otherwise exploits the evaluation or payout structure. Coordination includes sharing signals, strategies, timing parameters, or trading infrastructure for that purpose. The restriction applies regardless of whether the traders share an identity, device, network, or financial interest. Coordination may be established from the overall trading pattern without an express agreement between the traders.
 
 ### External Accounts and Platforms
 
-Traders must not arbitrage a Bungee account against an account at another exchange, broker, prop firm, or trading platform, including an account accessed through a wallet, or use such an account to offset Bungee exposure in an arrangement that exploits evaluation requirements, risk limits, or the payout structure. This applies whether the external account is controlled by the trader or by a person acting in coordination with the trader.
+Traders must not hold opposite exposure between a Bungee account and an account at another exchange, broker, prop firm, or trading platform, including an account accessed through a wallet, or otherwise arbitrage a Bungee account against such an account, in an arrangement that exploits evaluation requirements, risk limits, or the payout structure. This applies in the same market or in different markets, and whether the external account is controlled by the trader or by a person acting in coordination with the trader.
 
-### Hedging Within One Account
+### Opposite Positions Within One Account
 
-Where supported by the Bungee platform, a trader may hold opposing positions in the same instrument within one account only if the existing position has already reached substantial unrealized profit or loss when the opposing position is opened, and Bungee determines that the opposing position functions as an independent trade rather than a mechanism to capture gains while offsetting losses or exploit the program. Bungee determines whether the existing unrealized profit or loss is sufficient, taking account of the position and market circumstances. Hedging that does not meet these conditions is prohibited. This permission does not enable an order type or position mode that the platform does not support.
+Where supported by the Bungee platform, a trader may hold opposing positions in the same instrument within one account only if the existing position has already reached substantial unrealized profit or loss when the opposing position is opened, and Bungee determines that the opposing position functions as an independent trade rather than a mechanism to capture gains while offsetting losses or exploit the program. Bungee determines whether the existing unrealized profit or loss is sufficient, taking account of the position and market circumstances. Opposing positions in the same instrument that do not meet these conditions are prohibited. This permission does not enable an order type or position mode that the platform does not support.
+
+Long and short positions in different markets held within a single account are part of that account's own risk and are not, by themselves, opposite exposure under this section.
 
 ### Review and Consequences
 
-Bungee may review trading activity across associated accounts and traders to determine whether prohibited hedging occurred. A confirmed violation constitutes a breach and may result in immediate termination of all associated Bungee accounts, denial of payouts, forfeiture of accrued rewards attributable to the prohibited arrangement, and permanent disqualification from the program.
+Bungee may review trading activity across associated accounts and traders to determine whether prohibited opposite exposure occurred. A confirmed violation constitutes a breach and may result in immediate termination of all associated Bungee accounts, denial of payouts, forfeiture of accrued rewards attributable to the prohibited arrangement, and permanent disqualification from the program.
 
 For an isolated, inadvertent first violation, Bungee may issue a formal warning instead of termination. A repeated violation, or one determined to be deliberate or coordinated, will result in termination of associated Bungee accounts, forfeiture of affected accrued rewards, and disqualification. These measures apply alongside Section 30.
 
