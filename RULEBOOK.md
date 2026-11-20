@@ -350,6 +350,31 @@ Bungee may model realistic market execution, including:
 
 A displayed price does not guarantee that the full order will be filled at that price.
 
+### Order Execution
+
+Market orders and immediately executable portions of limit orders use Bungee's execution order-book snapshots, subject to the platform's spread, retained-depth and risk settings. Resting limit orders match eligible executed Hyperliquid trades: buys against sell trades at or below the limit, and sells against buy trades at or above the limit. Equality counts. Available traded quantity can produce partial fills; Bungee does not simulate a queue of other traders ahead of a resting order.
+
+Liquidity is simulated independently for each account. Orders within an account share that account's available liquidity; they do not compete with orders in another Bungee account. A displayed book price or candle touching a limit does not, by itself, establish that the order was eligible to fill.
+
+### Stop-Loss and Take-Profit Triggers
+
+Stop-loss and take-profit protection is activated by accepted executed Hyperliquid trade prices, not by mark prices. For a long position, a stop-loss triggers at or below its trigger price and a take-profit at or above it. For a short position, a stop-loss triggers at or above its trigger price and a take-profit at or below it. A trade exactly at the trigger price counts. A brief crossing remains eligible even if subsequent trades return inside the trigger.
+
+For a paired stop-loss and take-profit, the first eligible trade selects the winning leg and cancels its sibling. Activation fixes the exit quantity; later position growth does not enlarge that exit. Execution is capped to remaining exposure and cannot reverse the position. Closing the position retires its remaining protections and unfinished protective exits.
+
+The trigger price is not a guaranteed fill price:
+
+- **Market protection:** execution begins with the first eligible same-market execution book after the trigger. Available depth, spread and slippage determine the fills.
+- **Limit protection:** activation creates a reduce-only limit order. Only later eligible trades may fill it at its limit or better; the activating trade cannot also fill the exit. It may fill partially or remain resting if no eligible trades satisfy its limit. A stop-limit is not a guarantee of closure.
+
+A triggered protection cannot be edited or rearmed. A live protective limit remainder may be cancelled through order cancellation. Cancellation does not restore the paired leg or close the position; changing its limit requires cancellation and a new protection or close order.
+
+### Risk Prices and Charts
+
+Risk equity, daily-loss and maximum-drawdown breaches, evaluation passes and liquidations continue to use mark prices. A trade-based protection may trigger while the mark has not crossed the same level, and it does not guarantee execution before a mark-based breach or liquidation.
+
+Charts summarize interval prices and may have their high and low widened to include committed Bungee fills. Chart values, trigger trades, mark prices and execution prices can differ. The authoritative order, trade and account records determine what occurred; a candle touching a level alone does not establish an eligible trigger or fill.
+
 Bungee may reject, resize, or limit orders that exceed:
 
 - Available liquidity

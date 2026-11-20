@@ -2,6 +2,13 @@
 
 This file records material changes to the Bungee Funded Perp rulebook.
 
+## v0.9 - 2026-11-20 (draft)
+
+- Defined TP/SL activation using executed Hyperliquid trades, including equality, brief crossings, paired-leg selection, fixed trigger quantities and no position reversal.
+- Kept risk equity, account breaches, evaluation passes and liquidation on mark prices.
+- Distinguished order-book market execution from resting-limit trade matching, and trigger prices from fill prices.
+- Explained stop-limit and take-profit-limit non-fill risk, cancellation of a resting protective exit, and why charts, marks, triggers and fills may differ.
+
 ## v0.8 - 2026-11-05 (draft)
 
 - Stated plainly that bot activity, high-frequency trading (HFT), and scalping are not allowed on evaluation or funded accounts and that profit made through them is not eligible for payout.
