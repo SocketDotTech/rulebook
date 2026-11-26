@@ -2,6 +2,11 @@
 
 This file records material changes to the Bungee Funded Perp rulebook.
 
+## v0.10 - 2026-11-26 (draft)
+
+- Added One Shot Black evaluation and funded rules, including the midnight UTC trailing maximum drawdown, profit-claim reset and separate $30,000 allocation cap.
+- Scoped the 3% daily loss rule and static maximum drawdown to Classic, Pro, and Turbo.
+
 ## v0.9 - 2026-11-20 (draft)
 
 - Defined TP/SL activation using executed Hyperliquid trades, including equality, brief crossings, paired-leg selection, fixed trigger quantities and no position reversal.

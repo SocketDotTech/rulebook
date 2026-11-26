@@ -23,14 +23,14 @@ Bungee Funded Perp uses a one-step evaluation.
 - No consistency rule
 - Hard-breach model
 - Profit target varies by evaluation type
-- Maximum daily loss is 3% for every evaluation type
+- Maximum daily loss is 3% for Classic, Pro, and Turbo. One Shot Black has no daily drawdown limit
 - Maximum total drawdown varies by evaluation type
 
 Exact evaluation parameters will be displayed on the relevant evaluation plan before purchase and inside the Bungee dashboard.
 
 ## 3. Evaluation Plans
 
-Bungee offers three one-step evaluation tracks.
+Bungee offers three standard one-step evaluation tracks.
 
 ### Evaluation Rules
 
@@ -42,6 +42,8 @@ Bungee offers three one-step evaluation tracks.
 | Phases | 1 | 1 | 1 |
 | Time limit | None | None | None |
 | Standard reward split | 80% | 80% | 80% |
+
+One Shot Black is a $10,000 one-step evaluation with a 10% profit target, no daily drawdown limit, and a trailing maximum drawdown as defined in Section 6.
 
 ### Evaluation Pricing
 
@@ -55,7 +57,7 @@ Bungee uses a hard-breach model.
 
 An account may be breached if the trader:
 
-- Reaches or exceeds the maximum daily loss limit.
+- Reaches or exceeds the maximum daily loss limit, if the plan has one.
 - Reaches or exceeds the maximum total drawdown limit.
 - Uses a prohibited trading practice.
 - Violates these rules or the applicable Bungee Funded Perp Terms.
@@ -70,6 +72,8 @@ After a hard breach:
 Warnings may be shown as a convenience but do not change the underlying limits.
 
 ## 5. Daily Loss
+
+One Shot Black has no daily drawdown limit. Its trailing maximum drawdown is defined in Section 6.
 
 The maximum daily loss is 3% for Classic, Pro, and Turbo accounts. The daily loss level is calculated from **settled balance**, while breaches are checked against **live account equity**.
 
@@ -120,7 +124,7 @@ The dashboard will display the active daily loss limit and the time remaining un
 
 ## 6. Maximum Drawdown
 
-Bungee uses a static maximum drawdown:
+Classic, Pro, and Turbo use a static maximum drawdown:
 
 - Classic: 6%
 - Pro: 5%
@@ -128,7 +132,15 @@ Bungee uses a static maximum drawdown:
 
 The drawdown limit is measured against the account’s defined starting balance and does not trail upward with profits.
 
-After each approved funded-account payout, including the first, the account resets to its default state under Section 25. Its original starting balance and default risk limits are restored; unpaid eligible profits remain separately claimable and do not increase the trading balance or drawdown allowance.
+When eligible funded-account profit is claimed, the account resets to its default state under Section 25. Its original starting balance and default risk limits are restored; unpaid eligible profits remain separately claimable and do not increase the trading balance or drawdown allowance.
+
+### One Shot Black — Trailing Maximum Drawdown
+
+One Shot Black evaluation and funded accounts have **no daily drawdown limit**. They use a **trailing maximum drawdown** with a fixed $200 allowance, equal to 2% of the original $10,000 account size.
+
+The account starts with a $9,800 floor. At 00:00 UTC each day, the floor resets to **account equity at that moment minus $200**. Equity includes unrealized profit or loss on open positions and pending funding. The floor can move up or down at the reset. Intraday equity highs do not move it.
+
+The floor is enforced continuously. If live equity **touches or falls below** the current floor, the account incurs a hard breach. Claiming eligible profit on a funded One Shot Black account resets the trading balance to $10,000 and the floor to $9,800.
 
 ---
 
@@ -165,7 +177,7 @@ All supported markets are perpetual contracts that use isolated margin.
 
 Margin is assigned to each position independently and is not shared automatically with other open positions. A position's margin and liquidation risk are therefore isolated from the margin assigned to other positions.
 
-Isolated margin does not remove account-level risk controls. Realized and unrealized P&L, trading fees, and funding from every position continue to affect risk equity and account-level breach checks. The daily loss floor is calculated from settled balance at the UTC reset, while live risk equity is compared against that floor as described in Section 5. An account-level breach may result in all open positions being closed.
+Isolated margin does not remove account-level risk controls. Realized and unrealized P&L, trading fees, and funding from every position continue to affect risk equity and account-level breach checks. For accounts with a daily loss limit, the floor is calculated from settled balance at the UTC reset, while live risk equity is compared against that floor as described in Section 5. An account-level breach may result in all open positions being closed.
 
 Each supported asset has a fixed leverage amount set by Bungee.
 
@@ -204,7 +216,7 @@ Bungee may reduce notional limits, place a market into reduce-only mode, or disa
 
 ## 11. Aggregate Account Allocation
 
-A trader may hold multiple active Bungee Funded Perp accounts, subject to two separate combined allocation caps per trader:
+For standard accounts, a trader may hold multiple active Bungee Funded Perp accounts, subject to two separate combined allocation caps per trader:
 
 | Account Stage | Maximum Combined Active Nominal Account Size |
 | --- | ---: |
@@ -224,6 +236,8 @@ Examples:
 - Three active $100,000 challenge accounts = $300,000 challenge allocation.
 - One active $100,000 funded account plus one active $10,000 funded account = $110,000 funded allocation.
 - A trader may hold both of these allocations simultaneously, provided each stage remains within its own cap.
+
+One Shot Black has a separate **$30,000 allocation cap per trader**. Active One Shot Black evaluation and funded account equity count together, along with valid pending checkout reservations. This pool is separate from the standard evaluation and funded allocations.
 
 Each account remains subject to its own risk limits and position restrictions.
 
@@ -535,10 +549,10 @@ The dashboard shows the current allowance, which Bungee may change. A cap increa
 Claiming account profit and requesting an external payment are separate steps:
 
 1. Claiming eligible settled profit removes all eligible profit above the original balance, applies the account's saved profit split and credits the trader share to the user's withdrawable payout balance.
-2. The trading account resets to its original starting balance and default daily-loss and maximum-drawdown limits. The separately credited payout balance does not increase trading balance, equity or risk limits.
+2. The trading account resets to its original starting balance and applicable default risk limits. The separately credited payout balance does not increase trading balance, equity or risk limits.
 3. External payout requests consume the credited balance within the remaining daily gross allowance. Any excess stays withdrawable for a later UTC day. Claims can continue accumulating eligible profits when the daily payment allowance is exhausted.
 
-The static maximum drawdown floor after the reset is:
+For One Shot Black, the trading balance resets to $10,000 and the trailing maximum drawdown floor resets to $9,800. For Classic, Pro, and Turbo, the static maximum drawdown floor after the reset is:
 
 > **Maximum drawdown floor = original starting balance × (1 − applicable maximum drawdown percentage)**
 
